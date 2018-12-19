@@ -1,0 +1,16 @@
+/* audit list */
+.formato > div{
+  margin-bottom:  2px;
+  /* padding : 5px; */ */
+  font-size: 15px;
+  line-height: 110%;
+}
+
+
+.label_objectivo{
+  width: 250px;
+}
+
+.label_name{
+  width: 200px !important;
+}

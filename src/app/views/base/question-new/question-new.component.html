@@ -1,0 +1,36 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-4 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="panel-title" style="text-align: center">Pregunta</h1>
+          </div>
+          <div class="card-body">
+
+
+<h1 class="title">
+  {{label_title}}
+</h1>
+
+<form #quetionNew="ngForm" (ngSubmit)="onSubmit(question)" class="col-md5">
+  <p>
+
+      <span for="name" >{{label_name}}</span>
+      <input type="hidden" name="ID" value="{{question.ID}}">
+      <input type="text" name="name" [(ngModel)]="question.NAME" class="form-control" #name="ngModel" value="{{question.NAME}}" required/>
+      <span *ngIf="!name.valid && name.touched"> Nombre Invalido</span>
+</p>
+<p>
+      <input type="submit" name="" value="Guardar" class="btn btn-success" />
+  </p>
+
+</form>
+
+
+</div>
+</div>
+
+
+    </div>
+  </div>
+</div><!--/.col-->

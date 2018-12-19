@@ -1,0 +1,51 @@
+.table-title{
+  padding-bottom: 15px;
+  background: #299be4;
+  color: #fff;
+  padding: 16px 30px;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.table-title h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+}
+
+.table-sub-title{
+  background: #999999 !important;
+  color: #000;
+  font-size: 12px;
+}
+
+.table-sub-title > th {
+  vertical-align: middle;
+  border-bottom:1px;
+  text-align: center;
+}
+
+#label_name{
+  width: 200px;
+}
+#label_numerals_meci{
+  width: 100px;
+}
+
+#label_numerals_iso{
+  width: 100px;
+}
+
+#table-activities{
+  font-size: 10px;
+}
+
+.table-title .btn {
+  color: #fff;
+    float: right;
+    font-size: 16px;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+}

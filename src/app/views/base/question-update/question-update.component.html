@@ -1,0 +1,16 @@
+<h1 class="title">
+  {{page_title}}
+</h1>
+
+<form #quetionNew="ngForm" (ngSubmit)="onSubmit(question)" class="col-md5">
+  <p>
+
+      <span for="name" >{{page_name}}</span>
+      <input type="text" name="name" [(ngModel)]="question.name" class="form-control" #name="ngModel" required/>
+      <span *ngIf="!name.valid && name.touched"> Nombre Invalido</span>
+</p>
+<p>
+      <input type="submit" name="" value="Guardar" class="btn btn-success" />
+  </p>
+
+</form>

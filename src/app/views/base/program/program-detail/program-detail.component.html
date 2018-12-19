@@ -1,0 +1,80 @@
+
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-4 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="panel-title" style="text-align: center">Programas</h1>
+          </div>
+          <div class="card-body">
+
+
+
+<br/>
+<br/>
+
+<!-- ENCABEZADO -->
+<app-format-detail [format]="format"></app-format-detail>
+
+<br/>
+<br/>
+
+<!-- INFORMACION PROGRAMA -->
+<div class="container   rounded text-justify formato ">
+  <div class="row border-bottom rounded-top">
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_end}}:</strong> {{program.BEGIN}} / {{program.END}}
+    </div>
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_begin}}:</strong> {{program.CREATED_AT}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_objectives}}:</strong> {{program.OBJECTIVES}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_scope}}:</strong> {{program.SCOPE}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_responsabilities}}:</strong> {{program.RESPOSABILITIES}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_resource}}:</strong> {{program.RESOURCES}}
+    </div>
+  </div>
+  <div class="row border-bottom rounded-bottom">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_observation}}:</strong> {{program.OBSERVATION}}
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+    </div>
+  </div>
+</div><!--/.col-->
+
+
+
+
+<!-- AUDITORIAS -->
+
+
+
+            <!-- <tr *ngFor="let audit of audits;let i = index;">
+                <app-audit-list [_audit]="audit" [index]="i"></app-audit-list>
+            </tr> -->
+            <app-audit-list [_audit]="audits"></app-audit-list>

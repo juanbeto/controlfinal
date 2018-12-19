@@ -1,0 +1,32 @@
+<br/>
+<br/>
+
+<!-- ENCABEZADO -->
+<app-format-detail [format]="format"></app-format-detail>
+<br/>
+<br/>
+<div class="container   rounded text-justify formato text-white">
+  <div class="row bg-secondary rounded-top">
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_end}}:</strong> {{_audit.DATE_BEGIN}} / {{_audit.DATE_END}}
+    </div>
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_name_process}}:</strong> {{_audit.NAME_PROCESS}}
+    </div>
+  </div>
+  <div class="row bg-secondary">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_name}}:</strong> {{_audit.NAME}}
+    </div>
+  </div>
+  <div class="row bg-secondary rounded-bottom">
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_id_user_manager}}:</strong> {{_audit.ID_USER_MANAGER}}
+    </div>
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_id_user_resposible}}:</strong> {{_audit.ID_USER_RESPONSIBLE}}
+    </div>
+  </div>
+</div>
+
+<app-planning-list-run [plannings]="plannings"></app-planning-list-run>

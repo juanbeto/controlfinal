@@ -1,0 +1,55 @@
+<div class="container form_planning">
+<form #planningNew="ngForm" (ngSubmit)="onSubmit(planning)" class="col-md5">
+<table>
+  <tbody>
+    <tr>
+      <td colspan="2">
+        {{planning.QUESTION}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_records}}</strong>
+      </td>
+      <td>
+        <textarea name="records" [(ngModel)]="planning.RECORDS" class="form-control" #records="ngModel" rows="4" cols="10">{{planning.RECORDS}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_observation}}</strong>
+      </td>
+      <td>
+        <textarea name="observation" [(ngModel)]="planning.OBSERVATION" class="form-control" #observation="ngModel" rows="4" cols="20">{{planning.OBSERVATION}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_accordance}}</strong>
+      </td>
+      <td>
+        <select name="accordance" [(ngModel)]="planning.ACCORDANCE" class="form-control" #accordance="ngModel">
+          <option value="">...</option>
+          <option value="ar">AR</option>
+          <option value="am">AM</option>
+          <option value="nc">NC</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_actions}}</strong>
+      </td>
+      <td>
+        <textarea name="action" [(ngModel)]="planning.ACTION" class="form-control" #action="ngModel" rows="3" cols="10">{{planning.ACTION}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>

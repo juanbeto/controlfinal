@@ -1,0 +1,114 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Amenazas</h1>
+        </div>
+        <div class="card-body">
+          
+          <form method="POST" action="login">
+              
+                  
+            <div class="form-group">
+               
+              <div class="table-responsive ">
+                <table class="table">
+                  <thead>
+                    
+                  
+                    <br>
+                    <tr>
+                      <th scope="col">NOMBRE </th>
+                      <th scope="col">DESCRIPCION </th>
+                      <th scope="col">DEFINICION</th>
+                     
+                     
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let audit of risksmodelo;">
+                    <tr *ngIf="audit.ID_FACTOR_TYPE == 1"  scope="row">
+                   
+                      <th >{{audit.NAME}}</th>
+                      <td > {{audit.DESCRIPTION}} </td>
+                      <td> {{audit.DEFINITION}}</td>
+                    
+                    </tr>
+                   
+
+                     
+                  </tbody>
+                  
+                </table>
+               </div>
+            </div>
+       
+           
+        </form>
+        
+        </div>
+      </div>
+    </div><!--/.col-->
+   
+      </div>
+    </div><!--/.col-->
+
+
+
+    <div class="animated fadeIn">
+      <div class="row">
+        <div class="col-md-4 col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="panel-title" style="text-align: center">Debilidades</h1>
+            </div>
+            <div class="card-body">
+              
+              <form method="POST" action="login">
+                  
+                      
+                <div class="form-group">
+                   
+                  <div class="table-responsive ">
+                    <table class="table">
+                      <thead>
+                        
+                      
+                        <br>
+                        <tr>
+                          <th scope="col">NOMBRE</th>
+                          <th scope="col">DESCRIPCION </th>
+                          <th scope="col">DEFINICION</th>
+                         
+                         
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let audit of risksmodelo;">
+                        <tr *ngIf="audit.ID_FACTOR_TYPE == 2"  scope="row">
+                        
+                          <th scope="row">{{audit.NAME}}</th>
+                          <td> {{audit.DESCRIPTION}} </td>
+                          <td> {{audit.DEFINITION}}</td>
+                      
+                        </tr>
+                     
+                        
+                         
+    
+                         
+                      </tbody>
+                      
+                    </table>
+                   </div>
+                </div>
+           
+               
+            </form>
+            
+            </div>
+          </div>
+        </div><!--/.col-->
+       
+          </div>
+        </div><!--/.col-->
+   

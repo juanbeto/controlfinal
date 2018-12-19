@@ -1,0 +1,85 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Programas</h1>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+<div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+			                  <h2>Adminsitrar <b>programación {{label_message}}</b></h2>
+		                 </div>
+                     <div class="col-sm-6">
+                       <a  [routerLink]="['../audits/question-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Programación</i></a>
+                       
+                      
+                      </div>
+                </div>
+            </div>
+            <div class="alert alert-danger" *ngIf="status == 'error'" >
+              {{status_message}}
+            </div>
+            <div class="alert alert-success" *ngIf="status == 'success'" >
+              {{status_message}}
+            </div>
+            <div class="cargando" *ngIf="!programs">
+              Cargando ...
+            </div>
+            <div class="" *ngIf="programs">
+              <table class="table table-striped table-hover">
+                  <thead>
+                      <tr>
+                        <th>
+                          <span class="custom-checkbox">
+                            <input type="checkbox" id="selectAll">
+                            <label for="selectAll"></label>
+                          </span>
+                        </th>
+                        <th>{{label_id}}</th>
+                        <th>{{label_periodo}}</th>
+                        <th>{{label_objectives}}</th>
+                        <th>{{actions}}</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let program of programs; let i = index">
+                        <td>
+                          <span class="custom-checkbox">
+                            <input type="checkbox" id="checkbox1" name="options[]" value="{{program.ID}}">
+                            <label for="checkbox1"></label>
+                          </span>
+                        </td>
+                        <td>{{i + 1 }}</td>
+                        <td class="label_periodo">{{program.BEGIN}} / {{program.END}} </td>
+                        <td class="label_objectivo">{{ (program.OBJECTIVES.length>250)? (program.OBJECTIVES | slice:0:250)+'..':(program.OBJECTIVES) }}</td>
+                        <td>
+                          <a [routerLink]="['../audits/program', program.ID]" title="edit" class="edit btn btn-primary"><i class="fa fa-eye"> </i></a>
+                          <a [routerLink]="['../audits/program-update', program.ID]" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
+                          <a (click)="delete(program.ID)" title="delete" class="delete btn btn-danger"><i class="fa fa-trash"> </i></a>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div><!--/.col-->

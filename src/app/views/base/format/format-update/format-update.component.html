@@ -1,0 +1,63 @@
+
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-4 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="panel-title" style="text-align: center">Formatos</h1>
+          </div>
+          <div class="card-body">
+
+
+
+
+<h1 class="title">
+  {{label_title}}
+</h1>
+
+<form #quetionNew="ngForm" (ngSubmit)="onSubmit(format)" class="col-md5">
+    <div>
+      <div class="form_campo">
+        <span for="name" ><strong>{{label_name}}</strong></span>
+        <input type="hidden" name="ID" value="{{format.ID}}" />
+        <input type="text" name="name" [(ngModel)]="format.NAME" class="form-control" #name="ngModel" value="{{format.NAME}}" required/>
+        <span *ngIf="!name.valid && name.touched" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          Campo Nombre Invalido
+        </span>
+      </div>
+      <div class="form_campo">
+        <span for="code" ><strong>{{label_code}}</strong></span>
+        <input type="text" name="code" [(ngModel)]="format.CODE" class="form-control" #code="ngModel" value="{{format.CODE}}" required/>
+        <span *ngIf="!code.valid && code.touched" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          Campo Código Invalido
+        </span>
+      </div>
+      <div  class="form_campo">
+        <span for="name" ><strong>{{label_version}}</strong></span>
+        <input type="text" name="version" [(ngModel)]="format.VERSION" class="form-control" #version="ngModel" value="{{format.CODE}}" required/>
+        <span *ngIf="!version.valid && version.touched" class="alert alert-danger alert-dismissible"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          Campo Versión Invalido
+        </span>
+      </div>
+
+    </div>
+    <div>
+      <input type="submit" name="" value="Guardar" class="btn btn-success" />
+    </div>
+
+</form>
+<script type="text/javascript">
+$(".alert alert-danger").fadeTo(2000, 500).slideUp(500, function(){
+  $(".alert alert-danger").slideUp(500);
+});
+</script>
+
+
+
+</div>
+</div>
+
+
+    </div>
+  </div>
+</div><!--/.col-->

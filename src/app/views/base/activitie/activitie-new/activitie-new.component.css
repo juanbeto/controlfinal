@@ -1,0 +1,19 @@
+.form_activitie_new {
+    display:scroll;
+    /* position:fixed; */
+    bottom:-0px;
+    right:0px;
+    background-color: #fff;
+}
+
+.table-title .btn {
+  color: #fff;
+    float: right;
+    font-size: 13px;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+}

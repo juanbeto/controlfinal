@@ -1,0 +1,54 @@
+<!-- main app container -->
+<div class="col-md-9 form_activitie_new">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>{{label_title}} Actividad</h3>
+                <form name= "form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                     <div class="form-group">
+                        <label for="begin">{{label_begin}}</label>
+                        <input [(ngModel)]="activitie.BEGIN" #begin="ngModel" class="form-control" type="date"  id="begin" name="begin"   [ngClass]="{ 'is-invalid': f.submitted && begin.invalid }" required />
+                        <div *ngIf="f.submitted && begin.invalid" class="invalid-feedback">
+                            <div *ngIf="begin.errors?.required">Fecha requerida</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="end">{{label_end}}</label>
+                        <input type="date" class="form-control" name="end" [(ngModel)]="activitie.END" #end="ngModel" [ngClass]="{ 'is-invalid': f.submitted && end.invalid }" required />
+                        <div *ngIf="f.submitted && end.invalid" class="invalid-feedback">
+                            <div *ngIf="end.errors?.required">Fecha requerida</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">{{label_name}}</label>
+                        <input type="text" class="form-control" name="name" [(ngModel)]="activitie.NAME" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
+                        <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                            <div *ngIf="name.errors?.required">Campo requerido</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="numerals_iso">{{label_numerals_iso}}</label>
+                        <input type="text" class="form-control" name="numerals_iso" [(ngModel)]="activitie.NUMERALS_ISO" #numerals_iso="ngModel" [ngClass]="{ 'is-invalid': f.submitted && numerals_iso.invalid }" />
+                        <div *ngIf="f.submitted && numerals_iso.invalid" class="invalid-feedback">
+                            <div *ngIf="numerals_iso.errors?.required">Campo requerido</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="numerals_meci">{{label_numerals_meci}}</label>
+                        <input type="text" class="form-control" name="numerals_meci" [(ngModel)]="activitie.NUMERALS_MECI" #numerals_meci="ngModel" [ngClass]="{ 'is-invalid': f.submitted && numerals_meci.invalid }" />
+                        <div *ngIf="f.submitted && numerals_meci.invalid" class="invalid-feedback">
+                            <div *ngIf="numerals_meci.errors?.required">Campo requerido</div>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <button class="btn btn-primary"> {{label_button}}</button>
+                    </div>
+                    <div>
+                       <button class="btn btn-primary" (click)="ocultarActividad()">Cancel</button>
+                   </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

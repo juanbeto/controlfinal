@@ -1,0 +1,13 @@
+table tbody{
+  font-size: 12px;
+  text-align: justify
+}
+table thead{
+  font-size: 12px;
+}
+.label_objective{
+  width: 35%;
+}
+.label_name{
+  width: 30%;
+}

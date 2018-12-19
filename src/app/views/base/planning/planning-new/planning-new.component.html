@@ -1,0 +1,78 @@
+<div class="container">
+  <table id="table-plannings" class="table table-striped table-hover">
+      <thead>
+          <tr class="table-sub-title">
+            <th rowspan="2" id="label_id">{{label_id}}</th>
+            <th rowspan="2" id="label_name">{{label_question}}</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let question of questions; let i = index" (click)="selectQuestion(question.NAME)">
+            <td>{{i + 1 }}</td>
+            <td>{{question.NAME}} </td>
+          </tr>
+      </tbody>
+
+  </table>
+</div>
+<div class="container form_planning">
+<form #planningNew="ngForm" (ngSubmit)="onSubmit(planning)" class="col-md5">
+<table>
+  <tbody>
+    <tr>
+      <td colspan="2">
+       {{title_question}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_area}}</strong>
+      </td>
+      <td>
+          <select name="id_area" [(ngModel)]="planning.ID_AREA" class="form-control" #id_area="ngModel">
+            <option *ngFor="let area of areas; let i = index" value="{{area.ID}}">{{area.NAME}}</option>
+          </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_cycle}}</strong>
+      </td>
+      <td>
+            <select name="cycle" [(ngModel)]="planning.CYCLE" class="form-control" #cycle="ngModel">
+              <option value="P">P</option>
+              <option value="H">H</option>
+              <option value="V">V</option>
+              <option value="A">A</option>
+            </select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <textarea name="question" [(ngModel)]="planning.QUESTION" class="form-control" #question="ngModel" rows="8" cols="80">{{planning.QUESTION}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_numerals_iso}}</strong>
+      </td>
+      <td>
+        <input type="text" name="numerals_iso" [(ngModel)]="planning.NUMERALS_ISO" class="form-control" #numerals_iso="ngModel" value="{{planning.NUMERALS_ISO}}">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_numerals_meci}}</strong>
+      </td>
+      <td>
+        <input type="text" name="numerals_meci" [(ngModel)]="planning.NUMERALS_MECI" class="form-control" #numerals_meci="ngModel" value="{{planning.NUMERALS_MECI}}">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>

@@ -1,0 +1,72 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Actividades</h1>
+          <div class="col-md-4 col-lg-12">
+            <a href="#" class="btn btn-success" data-toggle="modal" (click)="form_activities = !form_activities; show_activities = !show_activities; form_activities_update=false;"><i class="fa fa-plus-circle"> Nueva Actividad</i></a>
+          </div>
+        </div>
+        <div class="card-body">
+          
+          <div class="form-group">
+             
+            <div class="table-responsive ">
+              <table class="table">
+                
+                <tbody>
+
+
+                  <div *ngIf="activities">
+                    <div *ngIf="!show_activities">
+                    <table id="table-activities" class=" table-responsive table-striped table-hover ">
+                        <thead>
+                            <tr class="table-sub-title">
+                              <th  rowspan="2">
+                                <span class="custom-checkbox">
+                                  <input type="checkbox" id="selectAll">
+                                  <label for="selectAll"></label>
+                                </span>
+                              </th>
+                              <th rowspan="2" id="label_id">{{label_id}}</th>
+                              <th rowspan="2" id="label_begin">{{label_begin}}</th>
+                              <th rowspan="2" id="label_end">{{label_end}}</th>
+                              <th rowspan="2" id="label_name">{{label_name}}</th>
+                              <th colspan="2" id="label_numerals">{{label_numerals}}</th>
+                              <th rowspan="2" id="label_auditor">{{label_auditor}}</th>
+                              <th rowspan="2" id="actions">{{actions}}</th>
+                            </tr>
+                            <tr class="table-sub-title">
+                              <th id="label_numerals_iso">{{label_numerals_iso}}</th>
+                              <th id="label_numerals_meci">{{label_numerals_meci}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let activitie of activities; let i = index">
+                              <td>
+                                <span class="custom-checkbox">
+                                  <input type="checkbox" id="checkbox1" name="options[]" value="{{activitie.ID}}">
+                                  <label for="checkbox1"></label>
+                                </span>
+                              </td>
+                              <td>{{i + 1 }}</td>
+                              <td>{{activitie.BEGIN}} </td>
+                              <td>{{activitie.END}} </td>
+                              <td>{{activitie.NAME}} </td>
+                              <td>{{activitie.NUMERALS_ISO}} </td>
+                              <td>{{activitie.NUMERALS_MECI}} </td>
+                              <td>{{activitie.ID_USER_AUDITOR}} </td>
+                              <td>
+                                <a (click)="edit(activitie);form_activities=false" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
+                                <a (click)="delete(activitie.ID)" title="delete" class="delete btn btn-danger"><i class="fa fa-trash"> </i></a>
+                              </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                  </div>
+                  <app-activitie-update  *ngIf="form_activities_update" [activitie]="activitie_update" (formactivities)="ocultarActividad()"  ></app-activitie-update>
+                  <app-activitie-new  *ngIf="form_activities" (formactivities)="ocultarActividad()" ></app-activitie-new>
+                  
+            

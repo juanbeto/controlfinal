@@ -1,0 +1,63 @@
+<br/>
+<br/>
+
+<!-- ENCABEZADO -->
+<app-format-detail [format]="format"></app-format-detail>
+<br/>
+<br/>
+
+<!-- INFORMACION PROGRAMA -->
+<div class="container   rounded text-justify formato text-white">
+  <div class="row bg-secondary rounded-top">
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_end}}:</strong> {{_audit.DATE_BEGIN}} / {{_audit.DATE_END}}
+    </div>
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_begin}}:</strong> {{_audit.CREATED_AT}}
+    </div>
+  </div>
+  <div class="row bg-secondary">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_name}}:</strong> {{_audit.NAME}}
+    </div>
+  </div>
+  <div class="row bg-secondary">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_objective}}:</strong> {{_audit.OBJECTIVE}}
+    </div>
+  </div>
+  <div class="row bg-secondary">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_scope}}:</strong> {{_audit.SCOPE}}
+    </div>
+  </div>
+  <div class="row bg-secondary">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_name_process}}:</strong> {{_audit.NAME_PROCESS}}
+    </div>
+  </div>
+  <div class="row bg-secondary">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_criteria}}:</strong> {{_audit.CRITERIA}}
+    </div>
+  </div>
+  <div class="row bg-secondary">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_observations}}:</strong> {{_audit.OBSERVATIONS}}
+    </div>
+  </div>
+  <div class="row bg-secondary rounded-bottom">
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_numerals}}:</strong> {{_audit.NUMERALS}}
+    </div>
+    <div class="col-sm-6">
+      <strong class="text-dark">{{label_meci}}:</strong> {{_audit.MECI}}
+    </div>
+  </div>
+</div>
+<!-- AUDITORIAS -->
+
+<app-activitie-list [activities]="activities"></app-activitie-list>
+
+
+<app-planning-list [plannings]="plannings"></app-planning-list>

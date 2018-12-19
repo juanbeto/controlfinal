@@ -1,0 +1,60 @@
+<div class=" ">
+
+  <div class="table-title col-12"  (click)="show_plannings = !show_plannings">
+    <div class="row">
+        <div class="col-sm-6">
+          <h2>Planificación</h2>
+        </div>
+        <div class="col-sm-6 ">
+          <a href="#" class="btn btn-success" data-toggle="modal"mat-raised-button (click)="openDialog();show_plannings = !show_plannings"><i class="fa fa-plus-circle"> Nueva Pregunta</i></a>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="plannings">
+  <div *ngIf="!show_plannings">
+  <table id="table-plannings" class="table table-striped table-hover">
+      <thead>
+          <tr class="table-sub-title">
+            <th  rowspan="2">
+              <span class="custom-checkbox">
+                <input type="checkbox" id="selectAll">
+                <label for="selectAll"></label>
+              </span>
+            </th>
+            <th rowspan="2" id="label_id">{{label_id}}</th>
+            <th rowspan="2" id="label_begin">{{label_area}}</th>
+            <th rowspan="2" id="label_end">{{label_cycle}}</th>
+            <th rowspan="2" id="label_name">{{label_question}}</th>
+            <th colspan="2" id="label_numerals">{{label_numerals}}</th>
+            <th rowspan="2" id="actions">{{actions}}</th>
+          </tr>
+          <tr class="table-sub-title">
+            <th id="label_numerals_iso">{{label_numerals_iso}}</th>
+            <th id="label_numerals_meci">{{label_numerals_meci}}</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let planning of plannings; let i = index">
+            <td>
+              <span class="custom-checkbox">
+                <input type="checkbox" id="checkbox1" name="options[]" value="{{planning.ID}}">
+                <label for="checkbox1"></label>
+              </span>
+            </td>
+            <td>{{i + 1 }}</td>
+            <td>{{planning.audit_areas.NAME}} </td>
+            <td>{{planning.CYCLE}} </td>
+            <td>{{planning.QUESTION}} </td>
+            <td>{{planning.NUMERALS_ISO}} </td>
+            <td>{{planning.NUMERALS_MECI}} </td>
+            <td>
+              <a [routerLink]="['../program-update', planning.ID]" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
+              <a (click)="delete(planning.ID)" title="delete" class="delete btn btn-danger"><i class="fa fa-trash"> </i></a>
+            </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+</div>

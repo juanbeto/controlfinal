@@ -1,0 +1,56 @@
+<br/>
+<br/>
+<div class=" ">
+
+  <div class="table-title col-12" >
+    <div class="row">
+        <div class="col-sm-6">
+          <h2>Planificación</h2>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="plannings">
+  <div *ngIf="!show_plannings">
+  <table id="table-plannings" class="table table-striped table-hover">
+      <thead>
+          <tr class="table-sub-title">
+            <th rowspan="2" id="label_id">{{label_id}}</th>
+            <th rowspan="2" id="label_cycle">{{label_cycle}}</th>
+            <th rowspan="2" id="label_name">{{label_question}}</th>
+            <th colspan="2" id="label_numerals">{{label_numerals}}</th>
+            <th rowspan="2" id="label_records">{{label_records}}</th>
+            <th rowspan="2" id="label_observation">{{label_observation}}</th>
+            <th rowspan="2" id="label_accordance">{{label_accordance}}</th>
+            <th rowspan="2" id="label_actions">{{label_actions}}</th>
+            <th rowspan="2" id="label_actions">{{label_action}}</th>
+          </tr>
+          <tr class="table-sub-title">
+            <th id="label_numerals_iso">{{label_numerals_iso}}</th>
+            <th id="label_numerals_meci">{{label_numerals_meci}}</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let planning of plannings; let i = index">
+            <td>{{i + 1 }}</td>
+            <td>{{planning.CYCLE}} </td>
+            <td>{{planning.QUESTION}} </td>
+            <td>{{planning.NUMERALS_ISO}} </td>
+            <td>{{planning.NUMERALS_MECI}} </td>
+            <td>{{planning.RECORDS}} - {{planning.OBSERVATION}}</td>
+            <td>
+              {{ (planning.OBSERVATION != null && (planning.OBSERVATION.toString().length>150))? (planning.OBSERVATIO | slice:0:150)+'..':(planning.OBSERVATIO) }}
+            </td>
+            <td>{{planning.ACCORDANCE}} </td>
+            <td>
+              {{  (planning.OBSERVATION != null && (planning.ACTION.length>150))? (planning.ACTION | slice:0:150)+'..':(planning.ACTION) }}
+            </td>
+            <td>
+              <button type="button" class="btn btn-success" (click)="openDialog(planning.ID);"><img src="assets/img/form.png" alt=""></button>
+            </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+</div>
