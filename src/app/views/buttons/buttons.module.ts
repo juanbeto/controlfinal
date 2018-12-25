@@ -21,6 +21,9 @@ import { AnalisisriesgoComponent } from './analisis_riesgos/analisisriesgo.compo
 import { PoliticaComponent } from './politica/politica.component';
 import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 import { UpdateComponent } from './identificacion_riesgo/identificacion_actualizar/update/update.component';
+import { RisksService } from '../../services/risks/risks.service';
+import { InsertFuncionaryComponent } from './analisis_riesgos/insert-funcionary/insert-funcionary.component';
+import { CalificationComponent } from './analisis_riesgos/calification/calification.component';
 
 
 // Angular
@@ -43,7 +46,10 @@ import { UpdateComponent } from './identificacion_riesgo/identificacion_actualiz
     AnalisisriesgoComponent,
     PoliticaComponent,
     SeguimientoComponent,
-      UpdateComponent
-  ]
+      UpdateComponent,
+      InsertFuncionaryComponent,
+      CalificationComponent
+  ],
+  
 })
 export class ButtonsModule { }

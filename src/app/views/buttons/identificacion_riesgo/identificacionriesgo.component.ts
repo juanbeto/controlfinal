@@ -16,22 +16,10 @@ import { auditactivities } from '../../../models/index_audit';
 export class IdentificacionriesgoComponent implements OnInit {
  public risksmodels : risks;
  public risksTable:risks;
- public label_id: string;
-  public label_begin: string;
-  public label_end: string;
-  public label_name: string;
-  public label_numerals_iso: string;
-  public label_numerals_meci: string;
-  public label_numerals: string;
-  public label_auditor: string;
-  public actions: string;
-  public form_activities = false;
-  public form_activities_update = false;
-
-  public activitie = new auditactivities(null,null,null,null,null,null,null,null);
-  public activitie_update: auditactivities;
-
-  @Input() public activities: auditactivities;
+ 
+ public status_risks: string;
+ public status_message: string;
+ 
   constructor(private http:HttpClient, private riskServices:RisksService ) { }
 
   ngOnInit() {
@@ -45,6 +33,8 @@ export class IdentificacionriesgoComponent implements OnInit {
          if(response.status == 'success'){
            this.risksmodels = response.risks;
            console.log(this.risksmodels);
+           this.status_risks = 'success';
+
          }
        },
        error => {
@@ -75,29 +65,26 @@ export class IdentificacionriesgoComponent implements OnInit {
 
    }
 
-
-  /* onSubmit(_planning: auditplanning){
-    console.log(_planning);
-    this._planningService.create(_planning).subscribe(
-      response => {
-        console.log(response);
-        this.planning = response.planning;
-        this.dialogRef.close();
-      },
-      error => {
-        console.log(<any>error);
-      }
-    );
+   delete(id){
+this.riskServices.delete(id).subscribe(
+  response=>{
+    this.getRisksAll();
+    this.status_risks = 'success';
+    this.status_message = 'La pregunta se elimino correctamente.';
+  },
+  error=>{
+    console.log(error);
+    this.status_risks = 'error';
+    this.status_message = 'El error al guardar la pregunta. Intente nuevamente.';
   }
-  */
-
-
- ocultarActividad(){
-  this.form_activities = false;
-}
-
-edit(){
+);
+   }
   
-  this.form_activities_update = true;
-}
+
+
+  
+
+
+
+
   }

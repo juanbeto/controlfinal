@@ -14,13 +14,21 @@ import { UpdateComponent } from './identificacion_riesgo/identificacion_actualiz
 
 const routes: Routes = [
 
-  {path:'identificacion/riesgo:id', component: UpdateComponent },
+  {path:'risks/riesgo/:id', component: UpdateComponent, data: {
+    title: 'Editar'
+  }},
+
+  {path:'risks/riesgo/', component: IdentificacionriesgoComponent, data: {
+    title: 'Identificacion_Riesgo'
+  }},
+
+
   
 
   {
     path: '',
     data: {
-      title: 'Buttons'
+      title: 'Risks'
     },
     children: [
      

@@ -10,17 +10,10 @@
           <form  #risks="ngForm" (ngSubmit)="loadTable(riskSelect)" >
              
             <div class="form-group">
-                <label for="id_casa">PROCESOS</label>
-                
-              <select  id="id_casa" class="form-control" name="id_casa">
-                  <p>Procesos</p> 
-                <option value="+47">P Gerencial</option>
-                <option value="+46">Sverige (+46)</option>
-                <option value="+45">Danmark (+45)</option>
-              </select>
+               
 
               <br>
-              <label for="id_casa">RIESGOS</label>
+              <label for="id_casa">Procesos</label>
               
               <select id="selectdrisks" name="selectrisks" [(ngModel)]="riskSelect" class="form-control" #selectdrisks="ngModel" >
                 <option value="+47" *ngFor="let risks of risksmodels " [value]="risks.ID">{{risks.ID}} {{risks.NAME}} </option>
@@ -34,7 +27,7 @@
         <div class="row">                                                                                   
           <div class="col-md-4 col-lg-12">
   
-              <button type="submit" class="btn btn-primary btn-lg btn-block">Procesar</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Consultar</button>
            
       </div>
 
@@ -58,9 +51,25 @@
           <div class="card">
             <div class="card-header">
               <h1 class="panel-title" style="text-align: center">Identificacion del Riesgo</h1>
+
+
+             
+              
+
+
             </div>
             <div class="card-body">
+              <div class="cargando" *ngIf="!risksmodels">
+                Cargando ...
+              </div>
+              <div class="alert alert-danger" *ngIf="status_risks == 'error'" >
+                {{status_message}}
+              </div>
+              <div  *ngIf="status_risks == 'success'">
+               
+                {{status_message}}
               
+              </div>
               <div class="form-group">
                  
                 <div class="table-responsive table-striped table-hover ">
@@ -84,8 +93,8 @@
                     <tbody>
                         <tr *ngFor="let risksT of risksmodels ;" scope="row">
                          
-                            <th scope="row">P1R2 {{risksT.CODE}}</th>
-                            <td>{{risksT.CODE}}</td>
+                            <th scope="row">{{risksT.CODE}}</th>
+                            <td>{{risksT.NAME}}</td>
                             <td>{{risksT.DESCRIPCION}}</td>
                             <td>{{risksT.EFFECTS}}s</td>
                             <td>{{risksT.CAUSES}}</td>
@@ -97,9 +106,9 @@
                             <td>{{risksT.CREATEDBY}}</td>
                             <td>
     
-                             <a [routerLink]="['../identificacion/riesgo', risksT.ID]" title="Edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
-                            
-                             <a (click)="delete(activitie.ID)" title="delete" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"> </i></a>
+                             <a [routerLink]="['../risks/riesgo', risksT.ID]" title="Edit" class="edit btn btn-warning btn-sm"><i class="fa fa-edit"> </i></a>
+                             
+                             <a (click)="delete(risksT.ID)" title="delete" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"> </i></a>
                           </td>
                        
                       </tr>
@@ -118,5 +127,4 @@
           </div>
       
    
-          <app-update  *ngIf="form_activities_update" [activitie]="activitie_update" (formactivities)="ocultarActividad()"  ></app-update>
-          
+         

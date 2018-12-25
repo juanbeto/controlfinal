@@ -1,23 +1,14 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-4 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="panel-title" style="text-align: center">Analisis del Riesgo</h1>
+          </div>
+          <div class="card-body">
 
-
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title">Modal title</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div class="animated fadeIn">
-      <div class="row">
-        <div class="col-md-4 col-lg-12">
-          <div class="card">
-            <div class="card-header">
-              <h1 class="panel-title" style="text-align: center">Identificacion del Riesgo</h1>
-            </div>
-            <div class="card-body">
               
-              <form  #risks="ngForm" (ngSubmit)="loadTable(riskSelect)" >
+              <form  #risks="ngForm" (ngSubmit)="getRisks(riskSelect)" >
                  
                 <div class="form-group">
                     <label for="id_casa">PROCESOS</label>
@@ -50,20 +41,15 @@
     
           </div> 
         </form> 
-          </div>
-        </div>
+      </div>
+    </div>
+         
+     </div>
+      </div>
+    </div><!--/.col-->
+
     
-        
-            </div>
-          </div>
-        </div><!--/.col-->
-    
-    
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-  </div>
-</ng-template>
+ 
 
 
 
@@ -75,10 +61,13 @@
     <div class="col-md-4 col-lg-12">
       <div class="card">
         <div class="card-header">
-          <h1 class="panel-title" style="text-align: center">Analisis del Riesgo</h1>
+           
+          <h3  class="panel-title" style="text-align: center"><b>Calificacion del Riesgo </b><p>{{riskid.NAME}}</p></h3>
         </div>
         <div class="card-body">
-          
+          <div  class="alert alert-danger" *ngIf="!riskid">
+            Seleccione un Proceso para continuar ...
+          </div>
           <form method="POST" action="login">
               
                   
@@ -151,12 +140,17 @@
 
                     <tbody>
                         <tr>
-                          <td> <select id="id_casa" class="form-control" name="id_casa">
-                              <p>Procesos</p> 
-                            <option value="+47">RARA</option>
-                            <option value="+46">Sverige (+46)</option>
-                            <option value="+45">Danmark (+45)</option>
+                            
+                          <td> <select id="id_frecuencia" name="id_frecuencia" [(ngModel)]="risksfrequency"  class="form-control"  #id_frecuencia="ngModel">
+                              
+                            <option value="+47" *ngFor="let frecuency of frecuencyModels" [value]="frecuency.ID">{{frecuency.ID}}{{frecuency.NAME}}</option>
+                           
                           </select>
+
+
+               
+
+
                         </td>
                         </tr>
 
