@@ -42,9 +42,12 @@ export class ActivitieListComponent implements OnInit {
 
   ocultarActividad(){
     this.form_activities = false;
+    this.form_activities_update = false;
+    this.show_activities = false;
   }
 
   edit(_activitie:auditactivities){
+    console.log(_activitie);
     this.activitie_update = _activitie;
     this.form_activities_update = true;
   }

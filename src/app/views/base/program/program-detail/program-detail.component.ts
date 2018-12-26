@@ -85,7 +85,7 @@ export class ProgramDetailComponent implements OnInit {
               this.program = response.program;
               this.getAudits();
             }else{
-              this._router.navigate(['audits/program']);
+              this._router.navigate(['/base/audits/program']);
             }
           },
           error => {

@@ -8,17 +8,17 @@ export const navItems = [
       text: 'NEW'
     }
   },
-  
+
   {
     name: 'Auditoria Interna',
     url: '/base',
     icon: 'icon-puzzle',
     children: [
-      {
+      /*{
         name: 'Areas',
         url: '/base/areas',
         icon: 'icon-puzzle'
-      },
+      },*/
       {
         name: 'Preguntas',
         url: '/base/question',
@@ -39,8 +39,8 @@ export const navItems = [
         url: '/base/auditoria',
         icon: 'icon-puzzle'
       },
-                 
-     
+
+
     ]
   },
   {
@@ -85,7 +85,7 @@ export const navItems = [
       },
     ]
   },
-  
+
   {
     name: 'Plan de Mejoramiento',
     url: '/icons',
@@ -143,5 +143,5 @@ export const navItems = [
       }
     ]
   }
-  
+
 ];

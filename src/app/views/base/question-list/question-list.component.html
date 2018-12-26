@@ -17,7 +17,7 @@
 				                  <h2>Administrar <b>Preguntas {{label_message}}</b></h2>
                      </div>
             					<div class="col-sm-6">
-            						<a [routerLink]="['../audits/question-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Pregunta</i></a>
+            						<a [routerLink]="['/base/audits/question-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Pregunta</i></a>
             					</div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                         <td>1</td>
                         <td>{{question.NAME}}</td>
                         <td>
-                          <a [routerLink]="['../audits/question-update', question.ID]" title="Edit" class="edit btn btn-warning">Editar</a>
+                          <a [routerLink]="['/base/audits/question-update', question.ID]" title="Edit" class="edit btn btn-warning">Editar</a>
                           <a (click)="delete(question.ID)" title="Delete" class="delete btn btn-danger">Borrar</a>
                         </td>
                       </tr>

@@ -20,6 +20,8 @@ export class ActivitieUpdateComponent implements OnInit {
   public label_numerals_meci: string;
   public label_numerals: string;
   public label_auditor: string;
+
+  private enviar: boolean = false;
  // public activitie: auditactivities;
   @Input()  public id_activitie: number;
 
@@ -42,21 +44,25 @@ export class ActivitieUpdateComponent implements OnInit {
   this.label_numerals = "Numeral";
   this.label_auditor = "Auditor";
   this.formactivities = new EventEmitter();
+  this.enviar = true;
+  console.log('constructor');
   }
 
   ngOnInit() {
     console.log(this.activitie);
+    console.log(this.activitie.ID);
     this._route.params.subscribe(params =>
     {
-      this._activitieService.getActivitie(this.id_activitie).subscribe(
+      this._activitieService.getActivitie(this.activitie.ID).subscribe(
       response => {
          if(response.status == 'success'){
-  
+            console.log('success');
          }else{
-           this._router.navigate(['audits/question']);
+           console.log(response.status);
+           this._router.navigate(['/base/audits/question']);
          }
-  
-  
+
+
        },
        error => {
          console.log(<any>error);
@@ -64,29 +70,34 @@ export class ActivitieUpdateComponent implements OnInit {
      );
    });
 }
-onSubmit(){
-  this._route.params.subscribe(
-    params => {
-      let id_audit = +params['id'];
-      this._activitieService.update(this.activitie, this.activitie.ID).subscribe(
-         response => {
-          console.log(response);
-          //this._router.navigate(['audits/audit/'+id_audit]);
-          window.location.reload();
-        },
-        error => {
-          if(error.error.NAME){
-            alert(error.error.NAME);
-          }
-        }
-      );
-    }
-  );
-}
 
 ocultarActividad( val){
+  this.enviar = false;
   this.formactivities.emit(1);
 }
+
+
+onSubmit(){
+    this._route.params.subscribe(
+      params => {
+        let id_audit = +params['id'];
+        this._activitieService.update(this.activitie, this.activitie.ID).subscribe(
+           response => {
+            console.log(response);
+            this._router.navigate(['/base/audits/audit/'+id_audit]);
+            window.location.reload();
+          },
+          error => {
+            if(error.error.NAME){
+              alert(error.error.NAME);
+            }
+          }
+        );
+      }
+    );
+}
+
+
 
 
 }

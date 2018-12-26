@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h3>{{label_title}} Actividad</h3>
-                <form name= "form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <form name= "form"  (ngSubmit)="f.form.valid && onSubmit();" #f="ngForm" novalidate>
                      <div class="form-group">
                         <label for="begin">{{label_begin}}</label>
                         <input [(ngModel)]="activitie.BEGIN" #begin="ngModel" class="form-control" type="date"  id="begin" name="begin"   [ngClass]="{ 'is-invalid': f.submitted && begin.invalid }" required />

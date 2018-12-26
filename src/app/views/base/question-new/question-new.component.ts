@@ -29,7 +29,7 @@ export class QuestionNewComponent implements OnInit {
       response => {
         console.log(response);
         this.question = response.question;
-        this._router.navigate(['/audits/question']);
+        this._router.navigate(['/base/audits/question']);
       },
       error => {
         console.log(<any>error);

@@ -6,7 +6,7 @@
           <h2>Planificación</h2>
         </div>
         <div class="col-sm-6 ">
-          <a href="#" class="btn btn-success" data-toggle="modal"mat-raised-button (click)="openDialog();show_plannings = !show_plannings"><i class="fa fa-plus-circle"> Nueva Pregunta</i></a>
+          <a href="#" class="btn btn-success" data-toggle="modal" (click)="openDialog();show_plannings = !show_plannings"><i class="fa fa-plus-circle"> Nueva Pregunta</i></a>
         </div>
       </div>
   </div>
@@ -50,7 +50,7 @@
             <td>{{planning.NUMERALS_ISO}} </td>
             <td>{{planning.NUMERALS_MECI}} </td>
             <td>
-              <a [routerLink]="['../program-update', planning.ID]" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
+              <a (click)="openDialogUpdate(planning)" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
               <a (click)="delete(planning.ID)" title="delete" class="delete btn btn-danger"><i class="fa fa-trash"> </i></a>
             </td>
           </tr>

@@ -2,7 +2,45 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,MatFormFieldModule
+} from '@angular/material';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 // Forms Component
@@ -49,7 +87,7 @@ import { FormatDetailComponent } from './format/format-detail/format-detail.comp
 import { AuditAppliedRunComponent } from './audit/audit-applied-run/audit-applied-run.component';
 import { PlanningListComponent } from './planning/planning-list/planning-list.component';
 import { ProgramDetailComponent } from './program/program-detail/program-detail.component';
-import { PlanningNewComponent } from './planning/planning-new/planning-new.component';
+//import { PlanningNewComponent } from './planning/planning-new/planning-new.component';
 import { PlanningUpdateRunComponent } from './planning/planning-update-run/planning-update-run.component';
 import { AreasDetailComponent } from './areas-detail/areas-detail.component';
 import { ActivitieUpdateComponent } from './activitie/activitie-update/activitie-update.component';
@@ -71,6 +109,7 @@ import { ProgramNewComponent } from './program/program-new/program-new.component
 import { ProgramUpdateComponent } from './program/program-update/program-update.component';
 import { AuditNewComponent } from './audit/audit-new/audit-new.component';
 import { AuditUpdateComponent } from './audit/audit-update/audit-update.component';
+import { PlanningUpdateComponent } from './planning/planning-update/planning-update.component';
 
 
 
@@ -90,14 +129,13 @@ import { AuditUpdateComponent } from './audit/audit-update/audit-update.componen
     TooltipModule.forRoot()
   ],
   declarations: [
-    
+
     ActivitieListComponent,
     FormatDetailComponent,
     AuditAppliedRunComponent,
     PlanningListComponent,
     ProgramDetailComponent,
-    PlanningNewComponent,
-    PlanningUpdateRunComponent,
+    
     AreasDetailComponent,
     ActivitieUpdateComponent,
     ActivitieNewComponent,
@@ -109,7 +147,7 @@ import { AuditUpdateComponent } from './audit/audit-update/audit-update.componen
     FormatListComponent,
     ProgramListComponent,
     AuditListRunComponent,
-    
+
     AreasDetailComponent,
     QuestionNewComponent,
     QuestionDetailComponent,
@@ -130,14 +168,8 @@ import { AuditUpdateComponent } from './audit/audit-update/audit-update.componen
     PlanningListComponent,
     ActivitieListComponent,
     ActivitieNewComponent,
-    ActivitieUpdateComponent,
-     PlanningNewComponent, AuditListRunComponent, AuditAppliedRunComponent, PlanningListRunComponent, PlanningUpdateRunComponent
-  
-  
-   
-   
-    
+    ActivitieUpdateComponent
   ],
-  entryComponents: [   PlanningNewComponent, PlanningUpdateRunComponent,AreasDetailComponent ],
+  entryComponents: [ AreasDetailComponent ],
 })
 export class BaseModule { }

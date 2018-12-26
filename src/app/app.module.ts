@@ -91,6 +91,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 
 import { PlanningNewComponent } from './views/base/planning/planning-new/planning-new.component';
+import { PlanningUpdateComponent } from './views/base/planning/planning-update/planning-update.component';
 import { PlanningUpdateRunComponent } from './views/base/planning/planning-update-run/planning-update-run.component';
 import { AreasDetailComponent } from './views/base/areas-detail/areas-detail.component';
 import { LoginService } from './services/login.service';
@@ -103,12 +104,12 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     FormsModule,
     NgbModalModule,
-    HttpClientModule, 
-    MatDialogModule, 
-    MatFormFieldModule, 
-    MatInputModule, 
-    BrowserAnimationsModule, 
-    MatCardModule, 
+    HttpClientModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatCardModule,
     AppRoutingModule,
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
@@ -118,29 +119,30 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule,   
+    ChartsModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot()
-    
+
   ],
   declarations: [
-  
-    
+
+
     AppComponent,
     ...APP_CONTAINERS,
     P404Component,
     P500Component,
     LoginComponent,
     RegisterComponent,
-    
-   
+    PlanningNewComponent,
+    PlanningUpdateComponent,
+    PlanningUpdateRunComponent
   ],
   providers: [LoginService,{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],
-  entryComponents: [   ],
+  entryComponents: [ PlanningNewComponent, PlanningUpdateComponent, PlanningUpdateRunComponent  ],
   //declarations: [HomeComponent, DialogOverviewExampleDialog],
   bootstrap: [ AppComponent ]
 })

@@ -4,6 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { auditplanning, auditquestion } from '../../../../models/index_audit';
 import { PlanningNewComponent } from '../planning-new/planning-new.component';
+import { PlanningUpdateComponent } from '../planning-update/planning-update.component';
 import { PlanningService } from '../../../../services/audits/planning.service';
 
 @Component({
@@ -60,14 +61,26 @@ export class PlanningListComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(PlanningNewComponent, {
-      width: '80%',
+      width: '900px',
       height: '100%',
       data: this.idAudit
     });
      console.log("id audioria::::"+this.idAudit);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.getPlannings();
+     dialogRef.afterClosed().subscribe(result => {
+     console.log('The dialog was closed');
+     this.getPlannings();
+    });
+  }
+
+  openDialogUpdate(planning: auditplanning): void {
+    const dialogRef = this.dialog.open(PlanningUpdateComponent, {
+      width: '900px',
+      height: '100%',
+      data: planning
+    });
+     dialogRef.afterClosed().subscribe(result => {
+     console.log('The dialog was closed');
+     this.getPlannings();
     });
   }
 

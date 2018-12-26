@@ -97,7 +97,7 @@ export class AuditDetailComponent implements OnInit {
               this.getActivities();
               this.getPlannings();
             }else{
-              this._router.navigate(['audits/program']);
+              this._router.navigate(['/base/audits/program']);
             }
           },
           error => {

@@ -43,7 +43,7 @@ export class QuestionUpdateComponent implements OnInit {
               this.question = response.question;
               console.log(this.question);
           }else{
-            this._router.navigate(['audits/question']);
+            this._router.navigate(['/base/audits/question']);
           }
 
 
@@ -58,7 +58,7 @@ export class QuestionUpdateComponent implements OnInit {
      console.log(this.question.NAME);
      this._questionService.update(this.question, this.question.ID).subscribe(
        response =>{
-         this._router.navigate(['audits/question']);
+         this._router.navigate(['/base/audits/question']);
        },
        error => {console.log(<any>error)}
      );

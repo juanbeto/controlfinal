@@ -20,9 +20,9 @@
 			                  <h2>Adminsitrar <b>programación {{label_message}}</b></h2>
 		                 </div>
                      <div class="col-sm-6">
-                       <a  [routerLink]="['../audits/question-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Programación</i></a>
-                       
-                      
+                       <a  [routerLink]="['/base/audits/question-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Programación</i></a>
+
+
                       </div>
                 </div>
             </div>
@@ -63,8 +63,8 @@
                         <td class="label_periodo">{{program.BEGIN}} / {{program.END}} </td>
                         <td class="label_objectivo">{{ (program.OBJECTIVES.length>250)? (program.OBJECTIVES | slice:0:250)+'..':(program.OBJECTIVES) }}</td>
                         <td>
-                          <a [routerLink]="['../audits/program', program.ID]" title="edit" class="edit btn btn-primary"><i class="fa fa-eye"> </i></a>
-                          <a [routerLink]="['../audits/program-update', program.ID]" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
+                          <a [routerLink]="['/base/audits/program', program.ID]" title="edit" class="edit btn btn-primary"><i class="fa fa-eye"> </i></a>
+                          <a [routerLink]="['/base/audits/program-update', program.ID]" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
                           <a (click)="delete(program.ID)" title="delete" class="delete btn btn-danger"><i class="fa fa-trash"> </i></a>
                         </td>
                       </tr>

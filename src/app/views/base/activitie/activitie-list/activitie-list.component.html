@@ -1,26 +1,28 @@
 <div class="animated fadeIn">
   <div class="row">
     <div class="col-md-4 col-lg-12">
-      <div class="card">
-        <div class="card-header">
-          <h1 class="panel-title" style="text-align: center">Actividades</h1>
-          <div class="col-md-4 col-lg-12">
+      <div class="card ">
+        <div class="table-title "  >
+        <div class="row"  >
+          <div class="col-sm-6"><h2>Actividades</h2></div>
+          <div class="col-sm-6 ">
             <a href="#" class="btn btn-success" data-toggle="modal" (click)="form_activities = !form_activities; show_activities = !show_activities; form_activities_update=false;"><i class="fa fa-plus-circle"> Nueva Actividad</i></a>
           </div>
         </div>
+      </div>
         <div class="card-body">
-          
+
           <div class="form-group">
-             
+
             <div class="table-responsive ">
               <table class="table">
-                
+
                 <tbody>
 
 
                   <div *ngIf="activities">
                     <div *ngIf="!show_activities">
-                    <table id="table-activities" class=" table-responsive table-striped table-hover ">
+                    <table id="table-activities" class=" table table-striped table-hover ">
                         <thead>
                             <tr class="table-sub-title">
                               <th  rowspan="2">
@@ -58,7 +60,7 @@
                               <td>{{activitie.NUMERALS_MECI}} </td>
                               <td>{{activitie.ID_USER_AUDITOR}} </td>
                               <td>
-                                <a (click)="edit(activitie);form_activities=false" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
+                                <button  (click)="edit(activitie);form_activities=false" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></button>
                                 <a (click)="delete(activitie.ID)" title="delete" class="delete btn btn-danger"><i class="fa fa-trash"> </i></a>
                               </td>
                             </tr>
@@ -68,5 +70,3 @@
                   </div>
                   <app-activitie-update  *ngIf="form_activities_update" [activitie]="activitie_update" (formactivities)="ocultarActividad()"  ></app-activitie-update>
                   <app-activitie-new  *ngIf="form_activities" (formactivities)="ocultarActividad()" ></app-activitie-new>
-                  
-            

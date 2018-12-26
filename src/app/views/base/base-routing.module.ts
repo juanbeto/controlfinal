@@ -73,7 +73,7 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Areas'
+      title: 'Audits'
     },
     children: [
       {
@@ -92,7 +92,7 @@ const routes: Routes = [
         }
       },
 
-      
+
       {
         path: 'formatos',
         component: FormatListComponent,
@@ -100,10 +100,10 @@ const routes: Routes = [
           title: 'Formatos'
         }
       },
-      
-      
-     
-     
+
+
+
+
       {
         path: 'planeacion',
         component: PlanningListComponent,
@@ -133,7 +133,7 @@ const routes: Routes = [
 
 
 
-      
+
     ]
   }
 ];

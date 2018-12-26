@@ -49,7 +49,7 @@ export class FormatUpdateComponent implements OnInit {
             if(response.status == 'success'){
                 this.format = response.format;
             }else{
-              this._router.navigate(['audits/format']);
+              this._router.navigate(['base/audits/format']);
             }
 
 
@@ -63,7 +63,7 @@ export class FormatUpdateComponent implements OnInit {
      onSubmit(form){
        this._formatService.update(this.format, this.format.ID).subscribe(
          response =>{
-           this._router.navigate(['audits/format']);
+           this._router.navigate(['base/audits/format']);
          },
          error => {console.log(<any>error)}
        );
