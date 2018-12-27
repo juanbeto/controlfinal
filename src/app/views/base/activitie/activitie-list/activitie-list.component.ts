@@ -19,6 +19,7 @@ export class ActivitieListComponent implements OnInit {
   public actions: string;
   public form_activities = false;
   public form_activities_update = false;
+  public show_activities = false;
 
   public activitie = new auditactivities(null,null,null,null,null,null,null,null);
   public activitie_update: auditactivities;

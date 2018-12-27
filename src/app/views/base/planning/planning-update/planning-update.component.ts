@@ -34,11 +34,11 @@ export class PlanningUpdateComponent implements OnInit {
 
   public questions: auditquestion;
   public areas: auditareas;
-  public planning: auditplanning;
+  //public planning: auditplanning;
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    public dialogRef: MatDialogRef<PlanningNewComponent>,
+    public dialogRef: MatDialogRef<PlanningUpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: number,
     private _questionService: QuestionService,
     private _areaService: AreasService,
