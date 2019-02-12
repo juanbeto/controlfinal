@@ -96,8 +96,10 @@ export class AuditDetailComponent implements OnInit {
               console.log(this._audit);
               this.getActivities();
               this.getPlannings();
-            }else{
+            }else if(response.status == 'error'){
               this._router.navigate(['/base/audits/program']);
+            }else{
+              this._router.navigate(['/login']);
             }
           },
           error => {

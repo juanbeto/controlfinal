@@ -34,7 +34,7 @@ export class PlanningUpdateComponent implements OnInit {
 
   public questions: auditquestion;
   public areas: auditareas;
-  public planning: auditplanning;
+  //public planning: auditplanning;
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,

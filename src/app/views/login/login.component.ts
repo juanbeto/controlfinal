@@ -6,19 +6,20 @@ import { LoginService } from '../../services/login.service';
   selector: 'app-dashboard',
   templateUrl: 'login.component.html'
 })
-export class LoginComponent { 
+export class LoginComponent {
 
   constructor(private router:Router, private loginService:LoginService){}
     private username;
     private password;
-  
+
     ValidateUser(){
-      if(this.loginService.ValidateUser(this.username, this.password)){
+      this.loginService.ValidateUser(this.username, this.password);
+      /*if(this.loginService.ValidateUser(this.username, this.password)){
         this.router.navigateByUrl('/dashboard')
       }
       else{
         this.router.navigate(['/login']);
       }
-    
+*/
     }
 }
