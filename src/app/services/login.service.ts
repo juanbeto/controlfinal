@@ -38,7 +38,7 @@ export class LoginService {
               this.login(this._user, true).subscribe(
                 response => {
                         this.identity = response;
-                        localStorage.setItem('user', JSON.stringify(this.identity));
+                        localStorage.setItem('identity', JSON.stringify(this.identity));
                         this.router.navigateByUrl('/dashboard');
                 },
                 error => {
@@ -77,5 +77,28 @@ export class LoginService {
     let params = "json= "+json;
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.post(this.url+'/login',params, {headers: headers});
+  }
+
+
+  getIdentity(){
+    let identity = JSON.parse(localStorage.getItem('identity'));
+
+    if(identity != "undefined"){
+      this.identity = identity;
+    }else{
+      this.identity = null;
+    }
+    return this.identity;
+  }
+
+  getToken(){
+    let token = localStorage.getItem('token');
+    if(token != "undefined"){
+      this.token = token;
+    }else{
+      this.token = null;
+    }
+    return this.token;
+
   }
 }
