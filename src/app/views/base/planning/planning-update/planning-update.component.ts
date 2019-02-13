@@ -38,7 +38,7 @@ export class PlanningUpdateComponent implements OnInit {
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    public dialogRef: MatDialogRef<PlanningNewComponent>,
+    public dialogRef: MatDialogRef<PlanningUpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: auditplanning,
     private _questionService: QuestionService,
     private _areaService: AreasService,
