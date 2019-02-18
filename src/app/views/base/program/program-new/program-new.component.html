@@ -1,3 +1,58 @@
-<p>
-  program-new works!
-</p>
+<div class="container form_programm">
+<form #programmNew="ngForm" (ngSubmit)="onSubmit(programs)" class="col-md5">
+<table>
+  <tbody>
+    <tr>
+      <td colspan="2">
+       <h2>{{label_title}}</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_objectives}}</strong>
+      </td>
+      <td>
+        <textarea name="objetives" [(ngModel)]="programs.OBJECTIVES" class="form-control" #question="ngModel" rows="8" cols="80">{{programs.OBJECTIVES}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_scope}}</strong>
+      </td>
+      <td>
+        <textarea name="scope" [(ngModel)]="programs.SCOPE" class="form-control" #question="ngModel" rows="8" cols="80">{{programs.SCOPE}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_responsabilities}}</strong>
+      </td>
+      <td>
+        <input type="text" name="resposabilities" [(ngModel)]="programs.RESPONSABILITIES" class="form-control" #numerals_iso="ngModel" value="{{programs.RESPONSABILITIES}}">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_resource}}</strong>
+      </td>
+      <td>
+        <textarea name="resource" [(ngModel)]="programs.RESOURCES" class="form-control" #question="ngModel" rows="8" cols="80">{{programs.RESOURCES}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_observation}}</strong>
+      </td>
+      <td>
+        <textarea name="observation" [(ngModel)]="programs.OBSERVATION" class="form-control" #question="ngModel" rows="8" cols="80">{{programs.OBSERVATION}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>

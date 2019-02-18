@@ -1,0 +1,12 @@
+.form_programm{
+  width: 80%;
+}
+
+
+.form_programm table{
+  width: 90%;
+}
+
+.form_programm table td {
+  vertical-align: top;
+}
