@@ -10,3 +10,8 @@
 .form_programm table td {
   vertical-align: top;
 }
+
+
+.form_programm input[type=date] {
+  width: 49.5%;
+}
