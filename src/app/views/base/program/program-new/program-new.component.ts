@@ -51,14 +51,14 @@ export class ProgramNewComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.programs = new auditprogram(null, null, null,'','','',1,'','',1,1,null,null,null,null);
+      this.programs = new auditprogram(null, null, null,'','','','1','','','0','0',null,null,1,1);
 
   }
 
 
-  onSubmit(this.programs: auditprogram){
+  onSubmit(programs: auditprogram){
     console.log(this.programs);
-    this._programService.create(this.programs).subscribe(
+    this._programService.create(programs).subscribe(
       response => {
         console.log(response);
         this.programs = response.program;

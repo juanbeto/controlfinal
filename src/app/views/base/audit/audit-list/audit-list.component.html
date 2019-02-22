@@ -6,54 +6,48 @@
           <h1 class="panel-title" style="text-align: center">Auditorias</h1>
         </div>
         <div class="card-body">
+          <div class="container formato">
+            <div class="" *ngIf="_audit">
+              <div class="table-responsive ">
+                <table class="table table-striped table-hover">
+                  <thead>
+                      <tr >
+
+                        <th>{{label_id}}</th>
+                        <th>{{label_name}}</th>
+                        <th>{{label_objective}}</th>
+                        <th>{{label_date_begin}}</th>
+                        <th>{{label_date_end}}</th>
+                        <th>{{actions}}</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let audit of _audit;let i = index;" scope="row">
+                                <td>{{ i + 1 }}</td>
+                                <td class="label_name">{{audit.NAME}}</td>
+                                <td class="label_objectivo">{{ (audit.OBJECTIVE.length>150)? (audit.OBJECTIVE | slice:0:150)+'..':(audit.OBJECTIVE) }}</td>
+                                <td>{{audit.DATE_BEGIN}}</td>
+                                <td>{{audit.DATE_END}}</td>
+                                <td>
 
 
-
-
-
-<div class="container formato">
-  <div class="" *ngIf="_audit">
-
-      <div class="table-responsive ">
-
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr >
-
-              <th>{{label_id}}</th>
-              <th>{{label_name}}</th>
-              <th>{{label_objective}}</th>
-              <th>{{label_date_begin}}</th>
-              <th>{{label_date_end}}</th>
-              <th>{{actions}}</th>
-            </tr>
-        </thead>
-        <tbody>
-<tr *ngFor="let audit of _audit;let i = index;" scope="row">
-            <td>{{ i + 1 }}</td>
-            <td class="label_name">{{audit.NAME}}</td>
-            <td class="label_objectivo">{{ (audit.OBJECTIVE.length>150)? (audit.OBJECTIVE | slice:0:150)+'..':(audit.OBJECTIVE) }}</td>
-            <td>{{audit.DATE_BEGIN}}</td>
-            <td>{{audit.DATE_END}}</td>
-            <td>
-
-
-              <a [routerLink]="['../../../audits/audit', audit.ID]" title="View" class="edit btn btn-primary btn-sm"><i class="fa fa-eye"> </i></a>
-              <a [routerLink]="['../../../audits/audits-update', audit.ID]" title="Edit" class="edit btn btn-warning btn-sm"><i class="fa fa-edit"> </i></a>
-              <a (click)="delete(audit.ID)" title="Delete" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"> </i></a>
-            </td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-
-
-
-
-</div>
-</div>
+                                  <a [routerLink]="['../../../audits/audit', audit.ID]" title="View" class="edit btn btn-primary btn-sm"><i class="fa fa-eye"> </i></a>
+                                  <a [routerLink]="['../../../audits/audits-update', audit.ID]" title="Edit" class="edit btn btn-warning btn-sm"><i class="fa fa-edit"> </i></a>
+                                  <a (click)="delete(audit.ID)" title="Delete" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"> </i></a>
+                                </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="container formato float-right">
+            <h1 class="panel-" style="text-align: center"><a  [routerLink]="['/base/audits/audit-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Auditor&iacute;a</i></a></h1>
+          </div>
+        </div>
+      </div>
 
 
     </div>
