@@ -88,5 +88,6 @@ export class AuditNewComponent implements OnInit {
           }
         );
       }
+    );
   }
 }
