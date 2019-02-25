@@ -33,14 +33,60 @@ export class AuditNewComponent implements OnInit {
 
   public status: string;
   public status_message: string;
-  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,'nul1l',Date.now(),null,null,null);
 
+  //@Input() public programa: program;
 
   constructor(    private _route: ActivatedRoute,
       private _router: Router,
-      private _auditService: AuditService,) { }
+      private _auditService: AuditService,) {
+        this.label_title = 'Lista de Auditorias';
+        this.label_id = '#';
+        this.label_name = 'Nombre';
+        this.label_id_program = 'Inicio';
+        this.label_objective= 'Objetivos';
+        this.label_id_user_manager = 'Alcance';
+        this.label_id_user_resposible = 'Responsables';
+        this.label_begin = 'Inicio';
+        this.label_end = 'Periodo';
+        this.label_scope = 'Alcance';
+        this.label_name_process = 'Nombre del proceso';
+        this.label_criteria = 'Criterio';
+        this.label_observations = 'Observaciones';
+        this.label_approved = 'Aprobado';
+        this.label_global = 'Global';
+        this.label_numerals = 'Numerales';
+        this.label_meci = 'MECI';
+        this.actions = 'Acciones';
+      }
 
   ngOnInit() {
   }
 
+
+
+
+  onSubmit(_audit: audit){
+    this._route.params.subscribe(
+      params => {
+        let id = +params['idprogram'];
+        _audit.ID_PROGRAM =id;
+        _audit.APPROVED = '1';
+        _audit.GLOBAL = '1';
+        _audit.MECI = '';
+        _audit.NUMERALS = '';
+        _audit.CLOSED = '0';
+        this._auditService.create(_audit).subscribe(
+          response => {
+            console.log(response);
+            this._audit = response.audit;
+            console.log(this._audit);
+            this._router.navigate(['base/audits/audit/'+this._audit.ID]);
+          },
+          error => {
+            console.log(<any>error);
+          }
+        );
+      }
+  }
 }

@@ -16,5 +16,10 @@ export class audit{
     public GLOBAL: string,
     public NUMERALS: string,
     public MECI: string,
-    public CLOSED: string){}
+    public CLOSED: string,
+		public CREATED_AT: any,
+		public UPDATED_AT: any,
+		public CREATED_BY	: number,
+		public UPDATED_BY: number
+	){}
 }

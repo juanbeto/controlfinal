@@ -57,10 +57,13 @@ export class AuditListComponent implements OnInit {
       this.label_numerals = 'Periodo de Ejecución';
       this.label_meci = 'Periodo de Ejecución';
       this.actions = 'Acciones';
+
+      console.log(this.idprogram);
     }
 
     ngOnInit() {
       console.log('audit.list component cargado correctamente');
+      console.log(this.idprogram);
     }
 
     delete(id){

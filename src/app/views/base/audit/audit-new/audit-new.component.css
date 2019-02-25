@@ -1,0 +1,17 @@
+.form_audit{
+  width: 80%;
+}
+
+
+.form_audit table{
+  width: 90%;
+}
+
+.form_audit table td {
+  vertical-align: top;
+}
+
+
+.form_audit input[type=date] {
+  width: 49.5%;
+}

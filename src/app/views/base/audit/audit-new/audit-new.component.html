@@ -1,3 +1,82 @@
-<p>
-  audit-new works!
-</p>
+<div class="container form_audit">
+<form #auditNew="ngForm" (ngSubmit)="onSubmit(_audit)" class="col-md5">
+<table>
+  <tbody>
+    <tr>
+      <td colspan="2">
+       <h2>{{label_title}}</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_id_program}}</strong>
+      </td>
+      <td>
+        <span>{{ _audit.CREATED_AT | date }} </ span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_end}}</strong>
+      </td>
+      <td>
+        <input type="date" name="begin" [(ngModel)]="_audit.DATE_BEGIN" class="form-control" #date_begin="ngModel" value="{{_audit.DATE_BEGIN}}" style="float:left;"> <span  style="float:left;"> / </span> <input type="date" name="end" [(ngModel)]="_audit.DATE_END" class="form-control" #date_end="ngModel" value="{{_audit.DATE_END}}"  style="float:left;">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_name}}</strong>
+      </td>
+      <td>
+        <textarea name="name" [(ngModel)]="_audit.NAME" class="form-control" #name="ngModel" rows="3" cols="80">{{_audit.NAME}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_objective}}</strong>
+      </td>
+      <td>
+        <textarea name="objective" [(ngModel)]="_audit.OBJECTIVE" class="form-control" #objective="ngModel" rows="8" cols="80">{{_audit.OBJECTIVE}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_scope}}</strong>
+      </td>
+      <td>
+        <textarea name="scope" [(ngModel)]="_audit.SCOPE" class="form-control" #scope="ngModel" rows="8" cols="80">{{_audit.SCOPE}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_name_process}}</strong>
+      </td>
+      <td>
+        <input type="text" name="name_process" [(ngModel)]="_audit.NAME_PROCESS" class="form-control" #name_process="ngModel" value="{{_audit.NAME_PROCESS}}">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_criteria}}</strong>
+      </td>
+      <td>
+        <textarea name="crieria" [(ngModel)]="_audit.CRITERIA" class="form-control" #crieria="ngModel" rows="8" cols="80">{{_audit.CRITERIA}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_observations}}</strong>
+      </td>
+      <td>
+        <textarea name="observations" [(ngModel)]="_audit.OBSERVATIONS" class="form-control" #observations="ngModel" rows="8" cols="80">{{_audit.OBSERVATIONS}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>

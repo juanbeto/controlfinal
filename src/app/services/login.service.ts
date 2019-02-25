@@ -32,7 +32,11 @@ export class LoginService {
 
     this.login(this._user).subscribe(
       response => {
-
+              if(response.status == 'error'){
+                  this.router.navigate(['/login']);
+                  return false;
+              }
+              console.log("LOGIN SERVICE");
               this.token = response;
               localStorage.setItem('token', this.token);
               this.login(this._user, true).subscribe(
@@ -93,6 +97,7 @@ export class LoginService {
 
   getToken(){
     let token = localStorage.getItem('token');
+    console.log(token);
     if(token != "undefined"){
       this.token = token;
     }else{

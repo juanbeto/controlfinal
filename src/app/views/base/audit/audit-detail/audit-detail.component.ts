@@ -34,7 +34,7 @@ export class AuditDetailComponent implements OnInit {
 
   public status: string;
   public status_message: string;
-  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
   public activities: auditactivities;
   public plannings: auditplanning;
 

@@ -25,7 +25,7 @@ export class PlanningListComponent implements OnInit {
   public label_accordance: string;
   public label_actions: string;
   public actions: string;
-
+  public show_plannings: false;
   public idAudit: number;
 
   @Input() public plannings: auditplanning;

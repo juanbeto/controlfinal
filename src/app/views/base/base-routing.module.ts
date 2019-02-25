@@ -60,7 +60,7 @@ const routes: Routes = [
   {path:'audits/program-update/:id', component: ProgramUpdateComponent },
 
   {path:'audits/audit', component: AuditListComponent },
-  {path:'audits/audit-new', component: AuditNewComponent },
+  {path:'audits/:idprogram/audit-new', component: AuditNewComponent },
   {path:'audits/audit/:id', component: AuditDetailComponent },
   {path:'audits/audit-update/:id', component: AuditUpdateComponent },
 

@@ -33,7 +33,7 @@ export class AuditService {
 
   getAudits(): Observable<any>{
     let params = 'json={"closed":"0"}';
-    console.log(params);
+    console.log(this.token);
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
                                     .set('Authorization', this.token);
     return this._http.post<any>(this.url+"/search", params, {headers: headers});
@@ -41,13 +41,14 @@ export class AuditService {
 
   getAuditsByProgram(id_program): Observable<any>{
     let params = 'json={"id_program":"'+id_program+'"}';
-    console.log(params);
+    console.log(this.token);
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
                                     .set('Authorization', this.token);
     return this._http.post<any>(this.url+"/search", params, {headers: headers});
   }
 
   getAudit(id): Observable<any>{
+    console.log(this.token);
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
                                     .set('Authorization', this.token);
     return this._http.get(this.url+'/'+id,  {headers: headers});
