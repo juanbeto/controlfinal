@@ -34,6 +34,8 @@ export class InformDetailComponent implements OnInit {
   public inform:auditinform;
   public _audit:audit;
   public preguntas_ar = Array();
+  public preguntas_am = Array();
+  public preguntas_nc = Array();
   constructor(
       private _route: ActivatedRoute,
       private _router: Router,

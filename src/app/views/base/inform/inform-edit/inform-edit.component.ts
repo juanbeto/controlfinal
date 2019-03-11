@@ -34,7 +34,7 @@ export class InformEditComponent implements OnInit {
         this.label_activities = "Actividades Desarrolladas";
         this.label_approved = "Aprobado";
         this.inform = new auditinform(null,null,'','','','','','','','','0',null,null,null,null);
-        _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+        //_audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
         this.getInformByAudit();
         console.log(this.inform);
 
