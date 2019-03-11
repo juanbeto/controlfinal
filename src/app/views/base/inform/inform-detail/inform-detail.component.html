@@ -1,0 +1,137 @@
+
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-4 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="panel-title" style="text-align: center">Informe de Auditoria</h1>
+          </div>
+          <div class="card-body">
+
+
+
+<br/>
+<br/>
+<!-- INFORMACION PROGRAMA -->
+<div class="container   rounded text-justify formato ">
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_location}}:</strong> {{inform.LOCATION}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_scope}}:</strong> {{_audit.SCOPE}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_criteria}}:</strong> {{_audit.CRITERIA}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_type_audit}}:</strong> {{inform.TYPE_AUDIT}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_execution}}:</strong> {{inform.EXECUTION}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_name_boss}}:</strong> {{inform.NAME_BOSS}}
+    </div>
+  </div>
+  <BR/><BR/>
+
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark"><h3>Objetivos de la Auditoria</h3></strong>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_objective_audit}}:</strong>{{_audit.OBJECTIVE}}
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_objective_inform}}:</strong>{{inform.OBJECTIVE}}
+    </div>
+  </div>
+  <BR/><BR/>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark"><h3>Conclusiones del Equipo Auditor</h3></strong>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_activities}}:</strong>{{inform.ACTIVITIES}}
+    </div>
+  </div>
+  <BR/><BR/>
+  <div class="row col-sm-12">
+    <div class="col-sm-3">
+      <strong class="text-dark">{{label_ar}}:</strong>
+    </div>
+    <div class="col-sm-9" *ngIf="!preguntas_ar">
+      No se evidenciaron <strong class="text-dark">Aspectos Relevantes</strong> en el desarrollo de la auditoría
+    </div>
+    <div class="col-sm-9" *ngFor="let ar of preguntas_ar">
+      <div class="col-sm-9" >
+        <strong class="text-dark">{{ar.area_name}} </strong>
+      </div>
+      <div class="col-sm-9" *ngFor="let preg of ar.preguntas;">
+        {{preg.ACTION}}
+      </div>
+    </div>
+  </div>
+  <BR/><BR/>
+  <div class="row col-sm-12">
+    <div class="col-sm-3">
+      <strong class="text-dark">{{label_am}}:</strong>
+    </div>
+    <div class="col-sm-9" *ngIf="!preguntas_am">
+      No se evidenciaron <strong class="text-dark">Aspectos por Mejorar</strong> en el desarrollo de la auditoría
+    </div>
+    <div class="col-sm-9" *ngFor="let am of preguntas_am">
+      <div class="col-sm-9" >
+        <strong class="text-dark">{{am.area_name}} </strong>
+      </div>
+      <div class="col-sm-9" *ngFor="let preg of am.preguntas;">
+        {{preg.ACTION}}
+      </div>
+    </div>
+  </div>
+  <BR/><BR/>
+  <div class="row col-sm-12">
+    <div class="col-sm-3">
+      <strong class="text-dark">{{label_nc}}:</strong>
+    </div>
+    <div class="col-sm-9" *ngIf="!preguntas_nc">
+      No se evidenciaron <strong class="text-dark">No conformidades</strong> en el desarrollo de la auditoría
+    </div>
+    <div class="col-sm-9" *ngFor="let nc of preguntas_nc">
+      <div class="col-sm-9" >
+        <strong class="text-dark">{{nc.area_name}} </strong>
+      </div>
+      <div class="col-sm-9" *ngFor="let preg of nc.preguntas;">
+        {{preg.ACTION}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+    </div>
+  </div>
+</div><!--/.col-->

@@ -7,3 +7,4 @@ export { auditformat } from '../models/auditformat';
 export { auditplanning } from '../models/auditplanning';
 export { auditprogram } from '../models/auditprogram';
 export { auditquestion } from '../models/auditquestion';
+export { auditinform } from '../models/auditinform';

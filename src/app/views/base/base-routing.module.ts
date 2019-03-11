@@ -21,6 +21,9 @@ import { ProgramUpdateComponent } from './program/program-update/program-update.
 import { AuditListComponent } from './audit/audit-list/audit-list.component';
 import { AuditNewComponent } from './audit/audit-new/audit-new.component';
 import { AuditUpdateComponent } from './audit/audit-update/audit-update.component';
+import { InformListComponent } from './inform/inform-list/inform-list.component';
+import { InformEditComponent } from './inform/inform-edit/inform-edit.component';
+import { InformDetailComponent } from './inform/inform-detail/inform-detail.component';
 
 
 
@@ -67,7 +70,9 @@ const routes: Routes = [
   {path:'audits/list-run', component: AuditListRunComponent },
   {path:'audits/list-run-applied/:id', component: AuditAppliedRunComponent },
 
-
+  {path:'audits/inform', component: InformListComponent },
+  {path:'audits/inform/inform-edit/:id', component: InformEditComponent },
+  {path:'audits/inform/inform-detail/:id', component: InformDetailComponent },
 
 
   {
@@ -125,7 +130,13 @@ const routes: Routes = [
           title: 'Auditoria'
         }
       },
-
+      {
+        path: 'inform',
+        component: InformListComponent,
+        data: {
+          title: 'informes'
+        }
+      },
 
 
 

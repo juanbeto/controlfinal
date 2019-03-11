@@ -1,0 +1,49 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Auditorias</h1>
+        </div>
+        <div class="card-body">
+
+
+
+
+
+
+<div class="container">
+        <div class="table-wrapper">
+            <div class="" *ngIf="informs">
+              <table class="table table-striped table-hover">
+                  <thead>
+                      <tr>
+                        <th>No. </th>
+                        <th>{{label_name}}</th>
+                        <th>{{actions}}</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let inform of informs; let i = index">
+                        <td>{{i + 1 }}</td>
+                        <td class="label_objectivo">{{ (inform.name.length>250)? (inform.name | slice:0:250)+'..':(inform.name) }}</td>
+                        <td>
+                          <a [routerLink]="['/base/audits/inform/inform-edit', inform.ID_AUDIT]" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
+                          <span *ngIf="inform.ID_INFORM"><a [routerLink]="['/base/audits/inform/inform-detail', inform.ID_AUDIT]" title="edit" class="edit btn btn-primary"><i class="fa fa-eye"> </i></a></span>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div><!--/.col-->

@@ -53,7 +53,7 @@ export class PlanningListRunComponent implements OnInit {
 
   ngOnInit() {
   }
-/*
+
   openDialog(id:number): void {
     console.log('The dialog was closed');
     const dialogRef = this.dialog.open(PlanningUpdateRunComponent, {
@@ -66,7 +66,7 @@ export class PlanningListRunComponent implements OnInit {
       console.log('The dialog was closed');
       this.getPlannings();
     });
-  }*/
+  }
 
   getPlannings(){
     this._route.params.subscribe(

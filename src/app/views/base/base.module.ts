@@ -110,6 +110,9 @@ import { ProgramUpdateComponent } from './program/program-update/program-update.
 import { AuditNewComponent } from './audit/audit-new/audit-new.component';
 import { AuditUpdateComponent } from './audit/audit-update/audit-update.component';
 import { PlanningUpdateComponent } from './planning/planning-update/planning-update.component';
+import { InformListComponent } from './inform/inform-list/inform-list.component';
+import { InformEditComponent } from './inform/inform-edit/inform-edit.component';
+import { InformDetailComponent } from './inform/inform-detail/inform-detail.component';
 
 
 
@@ -168,7 +171,10 @@ import { PlanningUpdateComponent } from './planning/planning-update/planning-upd
     PlanningListComponent,
     ActivitieListComponent,
     ActivitieNewComponent,
-    ActivitieUpdateComponent
+    ActivitieUpdateComponent,
+    InformListComponent,
+    InformEditComponent,
+    InformDetailComponent
   ],
   entryComponents: [ AreasDetailComponent ],
 })

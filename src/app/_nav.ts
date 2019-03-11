@@ -39,7 +39,11 @@ export const navItems = [
         url: '/base/auditoria',
         icon: 'icon-puzzle'
       },
-
+      {
+        name: 'Informes',
+        url: '/base/inform',
+        icon: 'icon-puzzle'
+      },
 
     ]
   },

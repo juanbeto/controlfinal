@@ -1,0 +1,82 @@
+<div class="container form_inform">
+<form #informEdit="ngForm" (ngSubmit)="onSubmit(inform)" class="col-md5">
+<table>
+  <tbody>
+    <tr>
+      <td colspan="2">
+       <h2>{{label_title}}</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_location}}</strong>
+      </td>
+      <td>
+        <input type="text" name="location" [(ngModel)]="inform.LOCATION" class="form-control" #location="ngModel" value="{{inform.LOCATION}}">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_type_audit}}</strong>
+      </td>
+      <td>
+        <input type="text" name="type_audit" [(ngModel)]="inform.TYPE_AUDIT" class="form-control" #type_audit="ngModel" value="{{inform.TYPE_AUDIT}}">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_execution}}</strong>
+      </td>
+      <td>
+        <input type="date" name="begin" [(ngModel)]="inform.EXECUTION" class="form-control" #execution="ngModel" value="{{inform.EXECUTION}}" >
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_concept}}</strong>
+      </td>
+      <td>
+        <textarea name="concept" [(ngModel)]="inform.CONCEPT" class="form-control" #concept="ngModel" rows="8" cols="80">{{inform.CONCEPT}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_objective}}</strong>
+      </td>
+      <td>
+        <textarea name="objective" [(ngModel)]="inform.OBJECTIVE" class="form-control" #objective="ngModel" rows="8" cols="80">{{inform.OBJECTIVE}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_activities}}</strong>
+      </td>
+      <td>
+        <textarea name="activities" [(ngModel)]="inform.ACTIVITIES" class="form-control" #activities="ngModel" rows="8" cols="80">{{inform.ACTIVITIES}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_name_boss}}</strong>
+      </td>
+      <td>
+        <input type="text" name="name_boss" [(ngModel)]="inform.NAME_BOSS" class="form-control" #name_boss="ngModel" value="{{inform.name_boss}}">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>{{label_code}}</strong>
+      </td>
+      <td>
+        <input type="text" name="code" [(ngModel)]="inform.CODE" class="form-control" #code="ngModel" value="{{inform.CODE}}">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>

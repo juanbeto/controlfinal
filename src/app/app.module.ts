@@ -136,8 +136,7 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RegisterComponent,
     PlanningNewComponent,
     PlanningUpdateComponent,
-    PlanningUpdateRunComponent
-  ],
+    PlanningUpdateRunComponent  ],
   providers: [LoginService,{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
