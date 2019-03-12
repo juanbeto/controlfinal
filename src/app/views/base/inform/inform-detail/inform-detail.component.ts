@@ -76,7 +76,8 @@ export class InformDetailComponent implements OnInit {
         this._informService.getInform(id).subscribe(
         response =>{
             if(response.status == 'success'){
-              this.inform = response.inform[0];
+              this.inform = response.inform;
+              console.log(this.inform);
               this.getAudit();
               this.getHallazgos();
             }

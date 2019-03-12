@@ -51,13 +51,14 @@ export class InformEditComponent implements OnInit {
         this._informService.getInformByAudit(id_audit).subscribe(
         response =>{
             if(response.status == 'success'){
-              this.inform = response.inform[0];
-              console.log(this.inform[0]);
+              this.inform = response.inform;
+              console.log(this.inform);
               if(response.inform.length==0){//Si es 0, no existe el informe... se debe crear
                 this.inform = new auditinform(null,id_audit,'',' ',null,' ','','',' ',' ','0',null,null,null,null);
                 this._informService.create(this.inform).subscribe(
                   response =>{
                     this.inform = response.inform;
+                    console.log(this.inform);
                   },
                   error=>{
                     console.log(error);
@@ -78,9 +79,8 @@ export class InformEditComponent implements OnInit {
     console.log(inform);
     this._informService.update(inform, inform.ID).subscribe(
       response => {
-        console.log(response);
         this.inform = response.inform;
-        console.log(this.inform);
+        alert('Se guardo la informacion');
         this._router.navigate(['base/audits/inform/inform-edit/'+this.inform.ID_AUDIT]);
       },
       error => {
