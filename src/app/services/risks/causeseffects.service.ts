@@ -18,6 +18,11 @@ export class CauseseffectsService {
     this.url = GLOBAL.url+"risks/causeseffects";
   }
 
+  getCausesEfectsAll(): Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.get<any>(this.url, {headers: headers});
+  }
+  
   create(_cause: riskscauseseffects): Observable<any>{
     let json = JSON.stringify(_cause);
     let params = "json= "+json;
@@ -25,10 +30,7 @@ export class CauseseffectsService {
     return this._http.post<any>(this.url, params, {headers: headers});
   }
 
-  getCausesEfects(): Observable<any>{
-    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    return this._http.get<any>(this.url, {headers: headers});
-  }
+  
 
   getCausesEfectsByRisks(id_risks): Observable<any>{
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');

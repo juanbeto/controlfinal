@@ -1,0 +1,142 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Editar Riesgo</h1>
+        </div>
+        <div class="card-body">
+
+<form #updaterisk="ngForm" (ngSubmit)="onSubmit(uprisk)" class="col-md5">
+ 
+<div class="form-row">
+      
+  <div class="form-group col-md-1">
+  
+  <p>
+    <span for="code" >Code</span>
+  <input type="text" name="code" value="{{uprisk.CODE}}" [(ngModel)]="uprisk.CODE" class="form-control" #code="ngModel" readonly>
+  <input type="hidden" name="ID" value="{{uprisk.ID}}" />
+ 
+</p>
+</div>
+
+<div class="form-group col-md-3">
+  
+    <p>
+      <span for="date" >Fecha de Creacion</span>
+    <input type="text" name="date" value="{{uprisk.CREATEDATE}}" [(ngModel)]="uprisk.CREATEDATE" class="form-control" #date="ngModel" readonly>
+    
+  </p>
+  </div>
+
+  <div class="form-group col-md-8">
+  
+      <p>
+        <span for="create" >Creado Por</span>
+      <input type="text" name="create" value="{{uprisk.CREATEDBY}}" [(ngModel)]="uprisk.CREATEDBY" class="form-control" #create="ngModel" readonly>
+     
+    </p>
+    </div>
+
+
+
+</div>
+
+
+<div class="form-group">
+    <p>
+        <span for="name" >Nombre</span>
+      <input type="text" name="name" value="{{uprisk.NAME}}" [(ngModel)]="uprisk.NAME" class="form-control" #name="ngModel" >
+      <span *ngIf="!name.valid && name.touched"> Nombre Invalido</span>
+    </p>
+    </div>
+
+<div class="form-group">
+<p>
+    <span for="description" >Descripcion</span>
+    <textarea name="description" value="{{uprisk.DESCRIPTION}}" [(ngModel)]="uprisk.DESCRIPTION" class="form-control" #description="ngModel" rows="3"></textarea>
+  <span *ngIf="!description.valid && description.touched"> Nombre Invalido</span>
+</p>
+
+
+
+
+
+
+</div>
+<div class="form-row">
+  <div class="form-group col-md-3 col-lg-6">
+      
+    <p>
+    <span for="efectos" >Efectos</span>
+  <textarea name="efectos" value="{{uprisk.EFFECTS}}" [(ngModel)]="uprisk.EFFECTS" class="form-control" #efectos="ngModel" required></textarea>
+    
+  <span *ngIf="!efectos.valid && efectos.touched"> Campo Invalido</span>
+</p>
+</div>
+
+<div class="form-group col-md-3 col-lg-6">
+<p>
+    <span for="causes" >Causas</span>
+  <textarea type="text" name="causes" value="{{uprisk.CAUSES}}" [(ngModel)]="uprisk.CAUSES" class="form-control" #causes="ngModel" ></textarea>
+  <span *ngIf="!causes.valid && causes.touched"> Campo Invalido</span>
+</p>
+</div>
+</div>
+
+
+<div class="form-row">
+  <div class="form-group col-md-3">
+    
+<p>
+    <span for="clasification" >Clasificacion</span>
+  <input type="text" name="clasification" value="{{uprisk.CLASSIFICATION}}" [(ngModel)]="uprisk.CLASSIFICATION" class="form-control" #clasification="ngModel" readonly>
+  <span *ngIf="!clasification.valid && clasification.touched"> Campo Invalido</span>
+</p>
+
+</div>
+
+<div class="form-group col-md-3">
+<p>
+    <span for="object" >Objeto</span>
+  <input type="text" name="object" value="{{uprisk.OBJECT}}" [(ngModel)]="uprisk.OBJECT" class="form-control" #object="ngModel" readonly>
+  <span *ngIf="!object.valid && object.touched"> Campo Invalido</span>
+</p>
+
+</div>
+
+<div class="form-group col-md-3">
+<p>
+    <span for="factor" >Factor</span>
+  <input type="text" name="factor"  value="{{uprisk.FACTOR}}"  [(ngModel)]="uprisk.FACTOR" class="form-control" #factor="ngModel" readonly>
+  <span *ngIf="!factor.valid && factor.touched"> Campo Invalido</span>
+</p>
+</div>
+<div class="form-group col-md-3">
+<p>
+    <span for="factor_vul" >Factor Vulnerabilidad</span>
+  <input type="text" name="factor_vul" value="{{uprisk.FACTORVULNERABILITY}}"  [(ngModel)]="uprisk.FACTORVULNERABILITY" class="form-control" #factor_vul="ngModel" readonly>
+  
+</p>
+</div>
+</div>
+<p>
+    <span for="probability" >Probabilidad</span>
+  <input type="text" name="probability" value="{{uprisk.PROBABILITY}}" [(ngModel)]="uprisk.PROBABILITY" class="form-control" #probability="ngModel">
+  <span *ngIf="!probability.valid && probability.touched"> Campo Invalido</span>
+</p>
+     
+
+
+  <p>
+      <input type="submit" name="" value="Guardar" class="btn btn-success" />
+  </p>
+
+</form>
+
+          </div>
+        </div>
+      </div><!--/.col-->        
+
+

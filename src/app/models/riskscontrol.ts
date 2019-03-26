@@ -1,10 +1,10 @@
 export class riskscontrol{
 	constructor(
-    public id: number,
-    public id_risks: number,
-    public id_control_type: number,
-    public name: string,
-    public document: number,
-    public is_applied: number,
-    public is_effective: number){}
+    public ID: number,
+    public ID_RISKS: number,
+    public ID_CONTROL_TYPE: number,
+    public NAME: string,
+    public DOCUMENT: number,
+    public IS_APPLIED: number,
+    public IS_EFFECTIVE: number){}
 }

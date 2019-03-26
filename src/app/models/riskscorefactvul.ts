@@ -1,8 +1,8 @@
 export class riskscorefactvul{
 	constructor(
-    public id: number,
-    public id_tablescore: number,
-    public id_vulnerability: number,
-    public id_impact: number
+    public ID: number,
+    public ID_TABLESCORE: number,
+    public ID_VULNERABILITY: number,
+    public ID_IMPACT: number
   ){}
 }

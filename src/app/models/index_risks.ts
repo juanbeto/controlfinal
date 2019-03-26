@@ -14,3 +14,10 @@ export { riskspolitics } from '../models/riskspolitics';
 export { risksprocess } from '../models/risksprocess';
 export { risksscore } from '../models/risksscore';
 export { risksvulnerability } from '../models/risksvulnerability';
+export { risksasignation } from '../models/risksasignation';
+export { riskseffectscauses } from '../models/riskseffectscauses';
+export { riskseffects } from '../models/riskseffects';
+
+
+
+

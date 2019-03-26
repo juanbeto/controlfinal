@@ -39,7 +39,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatTreeModule,MatFormFieldModule
+  MatTreeModule,MatFormFieldModule, MatOptionModule
 } from '@angular/material';
 
 
@@ -96,6 +96,11 @@ import { PlanningUpdateRunComponent } from './views/base/planning/planning-updat
 import { AreasDetailComponent } from './views/base/areas-detail/areas-detail.component';
 import { LoginService } from './services/login.service';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NewMatrizCausesComponent } from './views/buttons/identificacion_riesgo/new-matriz-causes/new-matriz-causes.component';
+import { FactorViewCalificationComponent } from './views/buttons/identificacion_riesgo/factor-view-calification/factor-view-calification.component';
+import { FactorCalificationComponent } from './views/buttons/identificacion_riesgo/factor-calification/factor-calification.component';
+import { InsertRisksComponent } from './views/buttons/identificacion_riesgo/insert-risks/insert-risks.component';
+import { PlanNewComponent } from './views/Planes_Mejoramiento/plan-new/plan-new.component';
 
 
 
@@ -105,7 +110,9 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModalModule,
     HttpClientModule,
+    MatCheckboxModule ,
     MatDialogModule,
+    MatListModule,
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
@@ -122,6 +129,8 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ChartsModule,
     FormsModule,
     HttpModule,
+    MatSelectModule,
+    MatOptionModule,
     NgbModule.forRoot()
 
   ],
@@ -136,13 +145,22 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RegisterComponent,
     PlanningNewComponent,
     PlanningUpdateComponent,
-    PlanningUpdateRunComponent  ],
+    PlanningUpdateRunComponent,
+    NewMatrizCausesComponent,
+    FactorViewCalificationComponent,
+    FactorCalificationComponent,
+    PlanNewComponent
+    
+    
+  ],
   providers: [LoginService,{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],
-  entryComponents: [ PlanningNewComponent, PlanningUpdateComponent, PlanningUpdateRunComponent  ],
-  //declarations: [HomeComponent, DialogOverviewExampleDialog],
+  entryComponents: [ FactorCalificationComponent, FactorViewCalificationComponent,
+    NewMatrizCausesComponent, PlanningNewComponent, PlanningUpdateComponent,
+     PlanningUpdateRunComponent,PlanNewComponent  ],
+  
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

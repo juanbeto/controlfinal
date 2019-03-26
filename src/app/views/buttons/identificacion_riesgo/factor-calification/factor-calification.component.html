@@ -1,0 +1,88 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card pre-scrollable" >
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Calificar Factores</h1>
+        </div>
+        <div class="card-body">
+          
+            <div class="row"  >
+                <div class="col-sm-6"><h2>Nueva Calificacion</h2></div>
+                <div class="col-sm-6 ">
+                  <a href="#" class="btn btn-success" data-toggle="modal" (click)="form_activities = !form_activities; show_activities = !show_activities; form_activities_update=false;"><i class="fa fa-plus-circle"> Nueva Calificacion</i></a>
+                </div>
+              </div>
+
+          <div class="row">
+<!--  primer tabla   ---------------------------->
+        
+
+<div class="col col-md-12 col-lg-12 col-sm-12" *ngIf="show_activities">
+
+
+  
+
+
+
+    <div class="card"  >
+     
+        <div class="card-body">
+            
+
+          <form #calificationin="ngForm" (ngSubmit)="onSubmitFactorCalification(riskCalification)" >
+
+             
+            <div class="form-group" *ngFor="let risksF of factorModels ; let i = index">
+              <div class="row">
+               
+              <label for="exampleInputEmail1"><b>{{risksF.NAME}}</b> </label>
+              </div>
+             
+              <div class="row">
+                <div class="col-md-6 col-lg-6">
+                   
+              <input type="text" name="{{risksF.VALOR}}" class="form-control" id="valor" aria-describedby="nombre" placeholder="digite calificacion" [(ngModel)]="riskCalification.VALOR"    #valor="ngModel" [ngModelOptions]="{standalone: true}" required>
+              <input type="text" name="{{risksF.ID_FACTOR}}" value="{{risksF.ID_FACTOR}}" [(ngModel)]="riskCalification.ID_FACTOR"  #factor="ngModel"   class="form-control"  >
+    
+   
+            </div>
+            <div class="col-md-6 col-lg-6">
+              <input type="submit" name="guardar" value="Calificar" class="btn btn-outline-success" />
+            </div>
+            </div>
+
+            </div>
+            
+           
+
+              
+
+               <input type="submit" name="" value="Guardar" class="btn btn-success" />
+          </form>
+
+
+
+
+
+        
+          </div>
+        </div>            
+          </div>
+
+
+
+
+
+</div>
+ <!--  fin   row   -->
+
+
+          </div>
+
+
+          
+          </div>
+          </div>
+          </div>
+          </div>

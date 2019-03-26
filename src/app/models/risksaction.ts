@@ -1,9 +1,9 @@
 export class risksaction{
 	constructor(
-    public id: number,
-    public id_risks: number,
-    public name: string,
-    public owner: string,
-    public indicator: string,
+    public ID: number,
+    public ID_RISKS: number,
+    public NAME: string,
+    public OWNER: string,
+    public INDICATOR: string,
 ){}
 }

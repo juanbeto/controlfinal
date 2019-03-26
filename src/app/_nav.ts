@@ -8,11 +8,10 @@ export const navItems = [
       text: 'NEW'
     }
   },
-
   {
     name: 'Auditoria Interna',
     url: '/base',
-    icon: 'icon-puzzle',
+    icon: 'cui-note',
     children: [
       /*{
         name: 'Areas',
@@ -22,56 +21,85 @@ export const navItems = [
       {
         name: 'Preguntas',
         url: '/base/question',
-        icon: 'icon-puzzle'
+        icon: 'cui-task'
       },
       {
         name: 'Formatos',
         url: '/base/formatos',
-        icon: 'icon-puzzle'
+        icon: 'cui-info'
       },
       {
         name: 'Programas',
         url: '/base/programas',
-        icon: 'icon-puzzle'
+        icon: 'cui-file'
       },
       {
         name: 'Auditorias',
         url: '/base/auditoria',
-        icon: 'icon-puzzle'
+        icon: 'cui-list'
       },
-      {
-        name: 'Informes',
-        url: '/base/inform',
-        icon: 'icon-puzzle'
-      },
+
 
     ]
   },
+
+  {
+    name: 'Plan de Mejoramiento',
+    url: '/planes',
+    icon: 'icon-star',
+    children: [
+      {
+        name: 'Plan de Mejoramiento',
+        url: '/planes/planes_mejoramiento',
+        icon: 'icon-star',
+        
+      },
+      {
+        name: 'Reportes',
+        url: '/icons/reports',
+        icon: 'icon-star'
+      },
+      
+    ]
+  },
+
+
   {
     name: 'Administracion de Riesgos',
     url: '/buttons',
     icon: 'icon-cursor',
     children: [
+
       {
-        name: 'Contexto Estrategico',
-        url: '/buttons/contexto_estrategico',
+        name: 'Politica de Riesgos',
+        url: '/buttons/politica',
         icon: 'icon-cursor'
       },
+
       {
         name: 'Identificacion del Riesgo',
         url: '/buttons/identificacion_riesgo',
         icon: 'icon-cursor'
       },
-      {
-        name: 'Analisis del Riesgo',
-        url: '/buttons/analisis_riesgo',
-        icon: 'icon-cursor'
-      },
+
       {
         name: 'Valoracion del Riesgo',
         url: '/buttons/valoracion',
         icon: 'icon-cursor'
       },
+      
+      {
+        name: 'Contexto Estrategico',
+        url: '/buttons/contexto_estrategico',
+        icon: 'icon-cursor'
+      },
+           
+      {
+        name: 'Analisis del Riesgo',
+        url: '/buttons/analisis_riesgo',
+        icon: 'icon-cursor'
+      },
+      
       {
         name: 'Matriz de Riesgo',
         url: '/buttons/matriz_riesgo',
@@ -89,63 +117,8 @@ export const navItems = [
       },
     ]
   },
-
-  {
-    name: 'Plan de Mejoramiento',
-    url: '/icons',
-    icon: 'icon-star',
-    children: [
-      {
-        name: 'CoreUI Icons',
-        url: '/icons/coreui-icons',
-        icon: 'icon-star',
-        badge: {
-          variant: 'success',
-          text: 'NEW'
-        }
-      },
-      {
-        name: 'Flags',
-        url: '/icons/flags',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Font Awesome',
-        url: '/icons/font-awesome',
-        icon: 'icon-star',
-        badge: {
-          variant: 'secondary',
-          text: '4.7'
-        }
-      },
-      {
-        name: 'Simple Line Icons',
-        url: '/icons/simple-line-icons',
-        icon: 'icon-star'
-      }
-    ]
-  },
-  {
-    name: 'Indicadores',
-    url: '/notifications',
-    icon: 'icon-bell',
-    children: [
-      {
-        name: 'Alerts',
-        url: '/notifications/alerts',
-        icon: 'icon-bell'
-      },
-      {
-        name: 'Badges',
-        url: '/notifications/badges',
-        icon: 'icon-bell'
-      },
-      {
-        name: 'Modals',
-        url: '/notifications/modals',
-        icon: 'icon-bell'
-      }
-    ]
-  }
-
+  
+ 
+  
+  
 ];

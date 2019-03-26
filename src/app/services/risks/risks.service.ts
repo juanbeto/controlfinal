@@ -38,12 +38,16 @@ export class RisksService {
   
   
 
-  update(_control:risks, id): Observable<any>{
+  update(_control:risks,id ): Observable<any>{
     let json = JSON.stringify(_control);
     let params = "json= "+json;
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.put(this.url+'/'+id,  params, {headers: headers});
   }
+
+
+  
+
 
   delete(id): Observable<any>{
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
