@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-update',
   templateUrl: './update.component.html',
   providers: [ RisksService ],
-  
+
   styles: []
 })
 
@@ -19,7 +19,7 @@ export class UpdateComponent implements OnInit {
   public riskmodel: risks;
   public uprisk: risks;
 
-  
+
   constructor(  private _route: ActivatedRoute,
     private _router: Router,private riskServices:RisksService ) { }
 
@@ -64,12 +64,12 @@ export class UpdateComponent implements OnInit {
         }
       );
    }
- 
+
 
 
    onSubmit(form){
-console.log(this.uprisk.id);
-this.riskServices.update(this.uprisk,this.uprisk.id).subscribe(
+console.log(this.uprisk.ID);
+this.riskServices.update(this.uprisk,this.uprisk.ID).subscribe(
   response=>{
     this._router.navigate(['risks/riesgo/']);
   },

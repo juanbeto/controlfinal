@@ -38,6 +38,11 @@ export const navItems = [
         url: '/base/auditoria',
         icon: 'cui-list'
       },
+      {
+        name: 'Informes',
+        url: '/base/inform',
+        icon: 'icon-puzzle'
+      },
 
 
     ]
@@ -52,14 +57,14 @@ export const navItems = [
         name: 'Plan de Mejoramiento',
         url: '/planes/planes_mejoramiento',
         icon: 'icon-star',
-        
+
       },
       {
         name: 'Reportes',
         url: '/icons/reports',
         icon: 'icon-star'
       },
-      
+
     ]
   },
 
@@ -87,19 +92,19 @@ export const navItems = [
         url: '/buttons/valoracion',
         icon: 'icon-cursor'
       },
-      
+
       {
         name: 'Contexto Estrategico',
         url: '/buttons/contexto_estrategico',
         icon: 'icon-cursor'
       },
-           
+
       {
         name: 'Analisis del Riesgo',
         url: '/buttons/analisis_riesgo',
         icon: 'icon-cursor'
       },
-      
+
       {
         name: 'Matriz de Riesgo',
         url: '/buttons/matriz_riesgo',
@@ -117,8 +122,8 @@ export const navItems = [
       },
     ]
   },
-  
- 
-  
-  
+
+
+
+
 ];

@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-update',
   templateUrl: './update.component.html',
   providers: [ RisksService ],
-  
+
   styles: []
 })
 
@@ -19,14 +19,14 @@ export class UpdateComponent implements OnInit {
   public riskmodel: risks;
   public uprisk: risks;
 
-  
+
   constructor(  private _route: ActivatedRoute,
     private _router: Router,private riskServices:RisksService ) { }
 
   ngOnInit() {
    this._route.params.subscribe(params =>
     {
-      this.uprisk= new risks(null,null,null,null,null,null,null,null,null,null);
+      this.uprisk= new risks(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
       this.getRisks(params['id']);
     });
 
@@ -64,7 +64,7 @@ export class UpdateComponent implements OnInit {
         }
       );
    }
- 
+
 
 
    onSubmit(form){
