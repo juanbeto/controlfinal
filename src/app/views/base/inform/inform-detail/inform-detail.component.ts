@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { auditinform, audit } from '../../../../models/index_audit';
 import { InformService } from '../../../../services/audits/inform.service';
 import { AuditService } from '../../../../services/audits/audit.service';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -80,6 +81,10 @@ export class InformDetailComponent implements OnInit {
               console.log(this.inform);
               this.getAudit();
               this.getHallazgos();
+              $('#activities').html(  this.inform.ACTIVITIES);
+              $('#objective').html(  this.inform.OBJECTIVE);
+              $('#concept').html(  this.inform.CONCEPT);
+
             }
           },
           error=>{
@@ -122,4 +127,18 @@ export class InformDetailComponent implements OnInit {
         );
       }
 
+printDiv(){       var contenido= document.getElementById("printDiv").innerHTML;
+       var contenidoOriginal= document.body.innerHTML;
+
+       document.body.innerHTML = contenido;
+
+       window.print();
+
+       document.body.innerHTML = contenidoOriginal;}
+
   }
+/*
+    function printDiv() {
+
+  }
+*/

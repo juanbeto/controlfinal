@@ -1,3 +1,4 @@
+
 <div class="container form_inform">
 <form #informEdit="ngForm" (ngSubmit)="onSubmit(inform)" class="col-md5">
 <table>
@@ -36,7 +37,7 @@
         <strong>{{label_concept}}</strong>
       </td>
       <td>
-        <textarea name="concept" [(ngModel)]="inform.CONCEPT" class="form-control" #concept="ngModel" rows="8" cols="80">{{inform.CONCEPT}}</textarea>
+        <app-ngx-editor [placeholder]="'Concepto del auditor'" [spellcheck]="true" [(ngModel)]="inform.CONCEPT" [ngModelOptions]="{standalone: true}" height="100px" minHeight="50px"></app-ngx-editor>
       </td>
     </tr>
     <tr>
@@ -44,7 +45,7 @@
         <strong>{{label_objective}}</strong>
       </td>
       <td>
-        <textarea name="objective" [(ngModel)]="inform.OBJECTIVE" class="form-control" #objective="ngModel" rows="8" cols="80">{{inform.OBJECTIVE}}</textarea>
+        <app-ngx-editor [placeholder]="'Objetivo del informe'" [spellcheck]="true" [(ngModel)]="inform.OBJECTIVE" [ngModelOptions]="{standalone: true}" height="100px" minHeight="50px"></app-ngx-editor>
       </td>
     </tr>
     <tr>
@@ -52,7 +53,7 @@
         <strong>{{label_activities}}</strong>
       </td>
       <td>
-        <textarea name="activities" [(ngModel)]="inform.ACTIVITIES" class="form-control" #activities="ngModel" rows="8" cols="80">{{inform.ACTIVITIES}}</textarea>
+        <app-ngx-editor [placeholder]="'Actividades del informe'" [spellcheck]="true" [(ngModel)]="inform.ACTIVITIES" [ngModelOptions]="{standalone: true}" height="100px" minHeight="50px"></app-ngx-editor>
       </td>
     </tr>
     <tr>
