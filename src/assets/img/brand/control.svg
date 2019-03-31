@@ -1,0 +1,21 @@
+<svg width="707.1" height="200" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <polygon id="svg_1" points="-21,150 -21,50 65.5999984741211,0 152.1999969482422,50 152.1999969482422,150 65.5999984741211,200 " fill="#ED1C24"/>
+  <polygon id="svg_2" points="73.5999984741211,133.3000030517578 44.70000076293945,116.69999694824219 44.70000076293945,83.30000305175781 73.5999984741211,66.69999694824219 102.5,83.30000305175781 131.3000030517578,66.69999694824219 73.5999984741211,33.29999923706055 15.899999618530273,66.69999694824219 15.899999618530273,133.3000030517578 73.5999984741211,166.6999969482422 131.3000030517578,133.3000030517578 102.5,116.69999694824219 " fill="#FFFFFF"/>
+  <polygon id="svg_3" points="-14,50 72.5999984741211,100 72.5999984741211,0 " stroke-miterlimit="10" stroke="#FFFFFF" opacity="0.04"/>
+  <polygon id="svg_4" points="-13,152 73.5999984741211,202 73.5999984741211,102 " stroke-miterlimit="10" stroke="#FFFFFF" opacity="0.04"/>
+  <polygon id="svg_5" points="73.5999984741211,100 160.1999969482422,150 160.1999969482422,50 " stroke-miterlimit="10" stroke="#FFFFFF" opacity="0.08"/>
+  <polygon id="svg_6" points="86.6,100 0,50 0,150 " fill-opacity="0"/>
+  <polygon id="svg_7" points="161.1999969482422,151 74.5999984741211,101 74.5999984741211,201 " stroke-miterlimit="10" stroke="#FFFFFF" opacity="0.08"/>
+  <polygon id="svg_8" points="76.20001220703125,101 -10.399993896484375,51 -10.399993896484375,151 " stroke-miterlimit="10" stroke="#FFFFFF" opacity="0.08"/>
+  <path id="svg_18" d="m424.050003,95.4375" opacity="0.5" stroke-width="1.5" stroke="#000" fill="#f7f4f4"/>
+  <ellipse id="svg_21" cy="308.4375" cx="704.050003" stroke-width="1.5" stroke="#f7f4f4" fill="#000"/>
+  <text stroke="#191717" transform="matrix(0.9115331172943115,0,0,0.8443633210990387,16.13198382779956,29.426900757361118) " xml:space="preserve" text-anchor="start" font-family="'Times New Roman', Times, serif" font-size="178" id="svg_28" y="142.396552" x="183.923479" stroke-width="0" fill="#ada1a1">Interno</text>
+ </g>
+</svg>
