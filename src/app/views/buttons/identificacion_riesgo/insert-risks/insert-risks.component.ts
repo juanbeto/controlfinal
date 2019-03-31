@@ -30,7 +30,7 @@ export class InsertRisksComponent implements OnInit {
 
 
   ngOnInit() {
-    this.uprisk= new risks(null,null,null,null,null,null,null,null,null, null,null,null,null,null, null);
+    this.uprisk= new risks(null,null,null,null,null,null,null,null,null, null,null,null,null,null, null,null,null,null);
     this.getFactorsAll();
     this.getAllProcess();
 

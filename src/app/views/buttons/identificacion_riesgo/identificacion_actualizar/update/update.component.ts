@@ -26,7 +26,7 @@ export class UpdateComponent implements OnInit {
   ngOnInit() {
    this._route.params.subscribe(params =>
     {
-      this.uprisk= new risks(null,null,null,null,null,null,null,null,null,null, null,null,null,null,null);
+      this.uprisk= new risks(null,null,null,null,null,null,null,null,null,null, null,null,null,null,null,null,null,null);
       this.getRisks(params['id']);
     });
 
