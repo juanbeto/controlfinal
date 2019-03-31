@@ -41,8 +41,19 @@ export class InformEditComponent implements OnInit {
       }
 
   ngOnInit() {
+      }
 
-  }
+      public options: Object = {
+        charCounterCount: true,
+        placeholderText: 'Edite el contenido aqui!',
+        heightMin: 200,
+        width: 800,
+        toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
+        toolbarButtonsXS: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
+        toolbarButtonsSM: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
+        toolbarButtonsMD: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
+      };
+
 
   getInformByAudit(){
     this._route.params.subscribe(

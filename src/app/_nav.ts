@@ -38,11 +38,14 @@ export const navItems = [
         url: '/base/auditoria',
         icon: 'cui-list'
       },
+
+
       {
         name: 'Informes',
         url: '/base/inform',
         icon: 'icon-puzzle'
       },
+
 
 
     ]

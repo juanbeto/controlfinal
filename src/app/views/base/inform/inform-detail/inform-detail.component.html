@@ -13,7 +13,7 @@
 <br/>
 <br/>
 <!-- INFORMACION PROGRAMA -->
-<div class="container   rounded text-justify formato ">
+<div class="container   rounded text-justify formato " id="printDiv">
   <div class="row ">
     <div class="col-sm-12">
       <strong class="text-dark">{{label_location}}:</strong> {{inform.LOCATION}}
@@ -58,7 +58,7 @@
   </div>
   <div class="row ">
     <div class="col-sm-12">
-      <strong class="text-dark">{{label_objective_inform}}:</strong>{{inform.OBJECTIVE}}
+      <strong class="text-dark">{{label_objective_inform}}:</strong><div id="objective"></div>
     </div>
   </div>
   <BR/><BR/>
@@ -69,7 +69,7 @@
   </div>
   <div class="row ">
     <div class="col-sm-12">
-      <strong class="text-dark">{{label_activities}}:</strong>{{inform.ACTIVITIES}}
+      <strong class="text-dark">{{label_activities}}:</strong><div id="activities"></div>
     </div>
   </div>
   <BR/><BR/>
@@ -123,10 +123,16 @@
       </div>
     </div>
   </div>
+<BR/><BR/>
+  <div class="row ">
+    <div class="col-sm-12">
+      <strong class="text-dark">{{label_concept}}:</strong><div id="concept"></div>
+    </div>
+  </div>
 </div>
 
 
-
+<button type="button" name="button" (click)="printDiv()">imprimir</button>
 
 </div>
 </div>
