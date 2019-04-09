@@ -101,6 +101,7 @@ import { FactorViewCalificationComponent } from './views/buttons/identificacion_
 import { FactorCalificationComponent } from './views/buttons/identificacion_riesgo/factor-calification/factor-calification.component';
 import { InsertRisksComponent } from './views/buttons/identificacion_riesgo/insert-risks/insert-risks.component';
 import { PlanNewComponent } from './views/Planes_Mejoramiento/plan-new/plan-new.component';
+import { UsersListComponent } from './views/login/users/users-list/users-list.component';
 
 
 
@@ -149,9 +150,10 @@ import { PlanNewComponent } from './views/Planes_Mejoramiento/plan-new/plan-new.
     NewMatrizCausesComponent,
     FactorViewCalificationComponent,
     FactorCalificationComponent,
-    PlanNewComponent
-    
-    
+    PlanNewComponent,
+    UsersListComponent
+
+
   ],
   providers: [LoginService,{
     provide: LocationStrategy,
@@ -160,7 +162,7 @@ import { PlanNewComponent } from './views/Planes_Mejoramiento/plan-new/plan-new.
   entryComponents: [ FactorCalificationComponent, FactorViewCalificationComponent,
     NewMatrizCausesComponent, PlanningNewComponent, PlanningUpdateComponent,
      PlanningUpdateRunComponent,PlanNewComponent  ],
-  
+
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
