@@ -17,7 +17,4 @@ export { risksvulnerability } from '../models/risksvulnerability';
 export { risksasignation } from '../models/risksasignation';
 export { riskseffectscauses } from '../models/riskseffectscauses';
 export { riskseffects } from '../models/riskseffects';
-
-
-
-
+export { Riskfactorcalificationdetail } from '../models/riskfactorcalificationdetail';

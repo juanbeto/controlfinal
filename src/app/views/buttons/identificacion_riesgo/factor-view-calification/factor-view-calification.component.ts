@@ -16,7 +16,7 @@ import { risksfactorpromedio } from '../../../../models/risksfactorpromedio';
 })
 export class FactorViewCalificationComponent implements OnInit {
 
-  public calificationsModels : Riskfactorcalificationdetail;
+  public calificationsModels : Riskfactorcalification;
   public valoresModels : Riskfactorcalificationdetail;
   public usersModels : Riskfactorcalification;
   public factorModels : risksfactor;
@@ -27,7 +27,7 @@ export class FactorViewCalificationComponent implements OnInit {
   constructor( public dialogRef: MatDialogRef<FactorViewCalificationComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData, 
     
-    public calificationService :RiskfactorcalificationserviceService,
+    public calificationService :RiskfactorcalificationdetailserviceService,
     public factorService : FactorService) { }
 
   ngOnInit() {
@@ -43,7 +43,7 @@ export class FactorViewCalificationComponent implements OnInit {
 
   getCalificationAll(){
 
-    this.calificationService.getCalificationsAll().subscribe(
+    this.calificationService.getCalificationDetailAll().subscribe(
       response => {
         if(response.status == 'success'){
           this.calificationsModels = response.califications;

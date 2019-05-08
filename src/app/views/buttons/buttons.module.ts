@@ -91,7 +91,7 @@ import { CalificarProbabilidadComponent } from './valoracion/calificar-probabili
       
      
   ],
-  entryComponents: [UpdateFactorsComponent, InsertFactorsComponent,CalificarProbabilidadComponent,InsertRisksComponent,NewCausesComponent,NewConsecuencesComponent
+  entryComponents: [FactorCalificationDetailComponent,UpdateFactorsComponent, InsertFactorsComponent,CalificarProbabilidadComponent,InsertRisksComponent,NewCausesComponent,NewConsecuencesComponent
    
   ],
  

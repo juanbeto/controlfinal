@@ -1,3 +1,38 @@
-<p>
-  factor-calification-detail works!
-</p>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card pre-scrollable" >
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Calificar Factor</h1>
+        </div>
+        <div class="card-body">
+
+          <form #calificationin="ngForm" (ngSubmit)="onSubmitFactorCalification(uprisk, califica)" >
+
+            <div class="form-group" >
+              <div class="row">
+                <div class=""></div>
+                <label for="exampleInputEmail1"><b>{{uprisk.NAME | uppercase}}</b> </label>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-lg-6">
+                  <input type="text" name="nota" [(ngModel)]="califica.VALOR" #valor="ngModel" value="{{califica.VALOR}}" class="form-control" id="valor" aria-describedby="nombre" placeholder="digite calificacion" >
+                </div>
+                <div class="col-md-6 col-lg-6">
+
+
+
+                </div>
+                <div class="col-md-6 col-lg-6">
+                  <input type="submit" name="guardar"  value="Calificar" class="btn btn-outline-success" />
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

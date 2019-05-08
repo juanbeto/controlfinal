@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import{HttpModule}from "@angular/http";
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -108,7 +108,7 @@ import { UsersListComponent } from './views/login/users/users-list/users-list.co
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule,ReactiveFormsModule,
     NgbModalModule,
     HttpClientModule,
     MatCheckboxModule ,
@@ -134,6 +134,35 @@ import { UsersListComponent } from './views/login/users/users-list/users-list.co
     MatOptionModule,
     NgbModule.forRoot()
 
+  ],exports: [
+
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule
   ],
   declarations: [
 

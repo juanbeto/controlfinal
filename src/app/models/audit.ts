@@ -20,6 +20,7 @@ export class audit{
 		public CREATED_AT: any,
 		public UPDATED_AT: any,
 		public CREATED_BY	: number,
-		public UPDATED_BY: number
+		public UPDATED_BY: number,
+		public users: any
 	){}
 }

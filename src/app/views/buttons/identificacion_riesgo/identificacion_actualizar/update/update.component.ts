@@ -1,82 +1,30 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { RisksService } from '../../../../../services/risks/risks.service';
-
-import { risks } from '../../../../../models/risks';
-
-import { ActivatedRoute, Router } from '@angular/router';
-
+import { auditactivities } from '../../../../../models/index_audit';
 
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
-  providers: [ RisksService ],
-
-  styles: []
+  styleUrls: ['./update.component.scss']
 })
-
 export class UpdateComponent implements OnInit {
+  public form_activities = false;
+  public form_activities_update = false;
+  activitie_update: auditactivities;
+  @Input()  public id_activitie: number;
 
-  public riskmodel: risks;
-  public uprisk: risks;
+  @Input() public activitie: auditactivities;
 
-
-  constructor(  private _route: ActivatedRoute,
-    private _router: Router,private riskServices:RisksService ) { }
+  @Output() formactivities: EventEmitter<number>;
+  constructor() { }
 
   ngOnInit() {
-   this._route.params.subscribe(params =>
-    {
-      this.uprisk= new risks(null,null,null,null,null,null,null,null,null,null, null,null,null,null,null,null,null,null);
-      this.getRisks(params['id']);
-    });
-
-
   }
-  getRisksAll(){
-    this.riskServices.getRisks().subscribe(
-      response =>{
-        if(response.status == 'success'){
-          this.uprisk = response.risks;
-          console.log(this.uprisk);
-        }
-      },
-      error => {
-        console.log(error);
-      }
-    );
- }
-
-
-  getRisks(id){
-      this.riskServices.getRisksById(id).subscribe(
-        response => {
-          if(response.status == 'success'){
-              this.uprisk = response.risks;
-              console.log(this.uprisk);
-          }else{
-            this._router.navigate(['risks/riesgo/']);
-          }
-
-
-        },
-        error => {
-          console.log(<any>error);
-        }
-      );
-   }
-
-
-
-   onSubmit(form){
-console.log(this.uprisk.ID);
-this.riskServices.update(this.uprisk,this.uprisk.ID).subscribe(
-  response=>{
-    this._router.navigate(['risks/riesgo/']);
-  },
-  error=>{console.log(<any>error)}
-);
-
+  ocultarActividad(){
+    this.form_activities = false;
   }
 
-
+  edit(_activitie:auditactivities){
+    this.activitie_update = _activitie;
+    this.form_activities_update = true;
+  }
 }

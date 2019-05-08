@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { DialogData } from '../identificacionriesgo.component';
 import { RiskfactorcalificationdetailserviceService } from '../../../../services/risks/riskfactorcalificationdetailservice.service';
 import { Riskfactorcalificationdetail } from '../../../../models/riskfactorcalificationdetail';
@@ -8,6 +8,7 @@ import { Riskfactorcalification } from '../../../../models/riskfactorcalificatio
 import { FactorService } from '../../../../services/risks/factor.service';
 import { risksfactor } from '../../../../models/index_risks';
 import { FormControl } from '@angular/forms';
+import { FactorCalificationDetailComponent } from './factor-calification-detail/factor-calification-detail.component';
 
 @Component({
   selector: 'app-factor-calification',
@@ -29,9 +30,10 @@ export class FactorCalificationComponent implements OnInit {
   public show_activities = false;
 
   valor = new FormControl('');
-factor= new FormControl('');
-
-  constructor( public dialogRef: MatDialogRef<FactorCalificationComponent>,
+idfactor= new FormControl('');
+modelFactor= risksfactor;
+  constructor( public dialog: MatDialog, public dialogview: MatDialog,
+    public dialogRef: MatDialogRef<FactorCalificationComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData, 
     public calificationService :RiskfactorcalificationserviceService,
     public userService :RiskfactorcalificationserviceService,
@@ -45,6 +47,7 @@ factor= new FormControl('');
     this.getFactores();    
     this.riskCalificationDetail = new Riskfactorcalificationdetail(null, null,null,null);
     this.riskCalification= new Riskfactorcalification(null,null,null,null,null);
+
   
   }
   onNoClick(): void {
@@ -94,7 +97,10 @@ factor= new FormControl('');
 this.factorService.getFactors().subscribe(
   response =>{
     if(response.status == 'success'){
-      this.factorModels = response.factors
+      this.factorModels = response.factors;
+      //for(i = 0 ;this.factorModels.length;<i;i++ ){
+        //this.riskCalificationDetails[] = new Riskfactorcalificationdetail(null, null,null,null);
+      //}
     }
 
   }
@@ -109,6 +115,8 @@ this.factorService.getFactors().subscribe(
   }
 
   onSubmitFactorCalification(){
+
+    console.log(this.idfactor.value);
     this.calificationService.create(this.riskCalification).subscribe(
      response => {
         console.log(response);
@@ -121,6 +129,20 @@ this.factorService.getFactors().subscribe(
     );
     
 
+  }
+
+  openDialogEditFactor(id: any){
+    const dialogRef4 = this.dialogview.open(FactorCalificationDetailComponent,{
+      width: '600px',
+  
+      data: {
+        id: id    },
+  
+    });
+  
+    dialogRef4.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   

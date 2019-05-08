@@ -1,6 +1,6 @@
 // Angular
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {
   MatAutocompleteModule,
@@ -129,7 +129,7 @@ import { InformDetailComponent } from './inform/inform-detail/inform-detail.comp
     PaginationModule.forRoot(),
     PopoverModule.forRoot(),
     ProgressbarModule.forRoot(),
-    TooltipModule.forRoot(),NgxEditorModule
+    TooltipModule.forRoot(),NgxEditorModule,MatSelectModule
   ],
   declarations: [
 

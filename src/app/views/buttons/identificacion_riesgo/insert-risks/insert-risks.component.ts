@@ -19,21 +19,21 @@ export class InsertRisksComponent implements OnInit {
   public proccessModel : risksprocess;
   public factorsModel : risksfactor;
   constructor(public dialogRef: MatDialogRef<InsertRisksComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, 
     private insertServices:RisksService, private _router:Router,private _route: ActivatedRoute,
     private proccessServices: ProccessService,
     private factorService: FactorService) { }
 
 
 
-
+  
 
 
   ngOnInit() {
-    this.uprisk= new risks(null,null,null,null,null,null,null,null,null, null,null,null,null,null, null,null,null,null);
+    this.uprisk= new risks(null,null,null,null,null,null,null,null,null, null);
     this.getFactorsAll();
     this.getAllProcess();
-
+    
   }
 
   getFactorsAll(){
@@ -41,20 +41,20 @@ export class InsertRisksComponent implements OnInit {
     this.factorService.getFactors().subscribe(
       response =>{
         if(response.status == 'success'){
-
+         
           this.factorsModel = response.factors;
           console.log(this.factorsModel);
-
+          
         }
-
+      
       },  error=>{
         console.log(error);
       }
-
+      
     );
    }
 
-
+  
 
   onSubmit(){
 this.insertServices.create(this.uprisk).subscribe(
@@ -74,19 +74,19 @@ error=>{
     this.proccessServices.getProccessAll().subscribe(
       response =>{
         if(response.status == 'success'){
-
+         
           this.proccessModel = response.proccess;
           console.log(this.proccessModel);
-
+          
         }
-
+      
       },  error=>{
         console.log(error);
       }
-
+      
     );
    }
 
-
+  
 
 }

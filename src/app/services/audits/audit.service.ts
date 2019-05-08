@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { GLOBAL } from '../global';
 import { audit } from '../../models/index_audit';
+import { user } from '../../models/adminuser';
 import { LoginService } from '../login.service';
 
 @Injectable({
@@ -22,9 +23,12 @@ export class AuditService {
     this.identity = this._userLogin.getIdentity();
   }
 
-  create(_audit: audit): Observable<any>{
+  create(_audit: audit, lists: user[]): Observable<any>{
     console.log(this.url);
+    _audit.users = lists;
     let json = JSON.stringify(_audit);
+    //json.users = JSON.stringify(lists);
+    console.log(json);
     let params = "json= "+json;
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
                                     .set('Authorization', this.token);
