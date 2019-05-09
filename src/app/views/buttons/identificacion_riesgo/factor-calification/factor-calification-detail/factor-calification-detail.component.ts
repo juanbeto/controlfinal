@@ -16,6 +16,7 @@ export class FactorCalificationDetailComponent implements OnInit {
   public uprisk: risksfactor;
   public factor: risksfactor;
   public factorTypeModels : risksfactortype;
+  public califica: Riskfactorcalificationdetail;
 
   constructor(private _route: ActivatedRoute,private insertFactorTypeService: FactorTypeService,
     private _router: Router,private factorServices:FactorService,
@@ -27,7 +28,7 @@ export class FactorCalificationDetailComponent implements OnInit {
   //this._route.params.subscribe(params =>
     //{
       this.uprisk= new risksfactor(null,null,null,null,null);
-      this.califica= new Riskfactorcalificationdetail(null,null,null,null,null);
+      this.califica= new Riskfactorcalificationdetail(null,null,null,null);
       //this.getFactor(params['id']);
    // });
     console.log("este es el numero"+this.data.id);
