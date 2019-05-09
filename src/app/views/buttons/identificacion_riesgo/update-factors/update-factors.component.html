@@ -1,0 +1,90 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-4 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="panel-title" style="text-align: center">Editar Factor</h1>
+          </div>
+          <div class="card-body">
+
+
+
+             
+  
+  <form #updaterisk="ngForm" (ngSubmit)="onSubmit(uprisk)" class="col-md5">
+   
+  <div class="form-row">
+        
+    <div class="form-group col-md-12 col-lg-12">
+    
+    <p>
+      <span for="code" >Nombre del Factor</span>
+    <input type="text" name="nombre" value="{{uprisk.NAME}}" [(ngModel)]="uprisk.NAME" class="form-control" #nombre="ngModel" >
+    
+   
+  </p>
+  </div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+
+  <div class="form-group">
+                                 
+                  
+    <br>
+    <label for="id_casa">Tipos de Contextos</label>
+    
+    <select id="selectdrisks" name="selectrisks" [(ngModel)]="uprisk.id_factor_type" class="form-control" #selectdrisks="ngModel" >
+      <option value="+47" *ngFor="let risks of factorTypeModels " [value]="risks.ID">{{risks.ID}} {{risks.NAME}}   </option>
+        </select>
+
+       
+
+     
+</div>
+
+
+
+  <div class="form-group">
+      <p>
+          <span for="description" >Descripcion</span>
+        <textarea name="description" value="{{uprisk.DESCRIPTION}}" [(ngModel)]="uprisk.DESCRIPTION" class="form-control" #description="ngModel" rows="3"></textarea>
+        
+       
+       
+        <span *ngIf="!description.valid && description.touched"> Campo Invalido</span>
+      </p>
+      </div>
+  
+  <div class="form-group">
+  <p>
+      <span for="definition" >Definicion</span>
+      <textarea name="definition" value="{{uprisk.DEFINITION}}" [(ngModel)]="uprisk.DEFINITION" class="form-control" #definition="ngModel" rows="3"></textarea>
+    <span *ngIf="!definition.valid && definition.touched"> Nombre Invalido</span>
+  </p>
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+    <p>
+        <input type="submit" name="" value="Guardar" class="btn btn-success" />
+    </p>
+  
+  </form>
+  
+            </div>
+          </div>
+        </div><!--/.col-->        
+  
+  
+  

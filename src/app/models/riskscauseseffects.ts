@@ -1,9 +1,8 @@
 export class riskscauseseffects{
 	constructor(
-    public id: number,
-    public id_risks: number,
-    public causes: number,
-    public effects: number,
-    public createdate: number
+    public ID: number,
+    public ID_RISKS: number,
+    public ID_FACTOR: number,
+    public CREATEDATE: number
   ){}
 }

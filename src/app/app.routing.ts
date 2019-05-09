@@ -69,8 +69,8 @@ export const routes: Routes = [
         loadChildren: './views/buttons/buttons.module#ButtonsModule'
       },
       {
-        path: 'charts',
-        loadChildren: './views/chartjs/chartjs.module#ChartJSModule'
+        path: 'planes',
+        loadChildren: './views/Planes_Mejoramiento/chartjs.module#ChartJSModule'
       },
       {
         path: 'dashboard',

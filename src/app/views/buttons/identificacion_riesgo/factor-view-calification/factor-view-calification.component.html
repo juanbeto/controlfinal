@@ -1,0 +1,52 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card pre-scrollable" >
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Vista de Calificaciones</h1>
+        </div>
+        <div class="card-body">
+           
+
+          <div class="row">
+<!--  primer tabla   ---------------------------->
+        
+
+<div class="col col-md-12 col-lg-12 col-sm-12">
+
+
+    <div class="card"  *ngFor="let risksF of factorModels ;">
+     
+        <div class="card-body">
+            <div class="card-title" > <b>{{risksF.NAME| uppercase}}  </b> </div>
+       
+       
+            <ul class="list-group"  *ngFor="let risksT of calificationsModels ;" >
+                <li class="list-group-item" *ngIf="risksF.ID_FACTOR==risksT.ID_FACTOR"><b>Nombre {{risksT.id_user}}</b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Calificaciòn dada por el evaluador &nbsp; &nbsp;{{risksT.valor}} </li>
+                
+              </ul>
+             
+              <br>
+       
+       <p ><b>Promedio : </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{risksT.valor }} </p>
+       
+          </div>
+        </div>            
+          </div>
+
+
+
+
+
+</div>
+ <!--  fin   row   -->
+
+
+          </div>
+
+
+          
+          </div>
+          </div>
+          </div>
+          </div>

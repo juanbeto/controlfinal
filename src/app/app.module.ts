@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import{HttpModule}from "@angular/http";
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,7 +39,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatTreeModule,MatFormFieldModule
+  MatTreeModule,MatFormFieldModule, MatOptionModule
 } from '@angular/material';
 
 
@@ -96,16 +96,24 @@ import { PlanningUpdateRunComponent } from './views/base/planning/planning-updat
 import { AreasDetailComponent } from './views/base/areas-detail/areas-detail.component';
 import { LoginService } from './services/login.service';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NewMatrizCausesComponent } from './views/buttons/identificacion_riesgo/new-matriz-causes/new-matriz-causes.component';
+import { FactorViewCalificationComponent } from './views/buttons/identificacion_riesgo/factor-view-calification/factor-view-calification.component';
+import { FactorCalificationComponent } from './views/buttons/identificacion_riesgo/factor-calification/factor-calification.component';
+import { InsertRisksComponent } from './views/buttons/identificacion_riesgo/insert-risks/insert-risks.component';
+import { PlanNewComponent } from './views/Planes_Mejoramiento/plan-new/plan-new.component';
+import { UsersListComponent } from './views/login/users/users-list/users-list.component';
 
 
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule,ReactiveFormsModule,
     NgbModalModule,
     HttpClientModule,
+    MatCheckboxModule ,
     MatDialogModule,
+    MatListModule,
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
@@ -122,8 +130,39 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ChartsModule,
     FormsModule,
     HttpModule,
+    MatSelectModule,
+    MatOptionModule,
     NgbModule.forRoot()
 
+  ],exports: [
+
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule
   ],
   declarations: [
 
@@ -136,13 +175,23 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RegisterComponent,
     PlanningNewComponent,
     PlanningUpdateComponent,
-    PlanningUpdateRunComponent  ],
+    PlanningUpdateRunComponent,
+    NewMatrizCausesComponent,
+    FactorViewCalificationComponent,
+    FactorCalificationComponent,
+    PlanNewComponent,
+    UsersListComponent
+
+
+  ],
   providers: [LoginService,{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],
-  entryComponents: [ PlanningNewComponent, PlanningUpdateComponent, PlanningUpdateRunComponent  ],
-  //declarations: [HomeComponent, DialogOverviewExampleDialog],
+  entryComponents: [ FactorCalificationComponent, FactorViewCalificationComponent,
+    NewMatrizCausesComponent, PlanningNewComponent, PlanningUpdateComponent,
+     PlanningUpdateRunComponent,PlanNewComponent  ],
+
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

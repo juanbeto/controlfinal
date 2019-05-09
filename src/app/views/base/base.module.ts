@@ -1,6 +1,6 @@
 // Angular
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {
   MatAutocompleteModule,
@@ -78,7 +78,7 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 // Tooltip Component
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
-
+import { NgxEditorModule } from 'ngx-editor';
 
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
@@ -129,7 +129,7 @@ import { InformDetailComponent } from './inform/inform-detail/inform-detail.comp
     PaginationModule.forRoot(),
     PopoverModule.forRoot(),
     ProgressbarModule.forRoot(),
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),NgxEditorModule,MatSelectModule
   ],
   declarations: [
 
@@ -138,7 +138,7 @@ import { InformDetailComponent } from './inform/inform-detail/inform-detail.comp
     AuditAppliedRunComponent,
     PlanningListComponent,
     ProgramDetailComponent,
-    
+
     AreasDetailComponent,
     ActivitieUpdateComponent,
     ActivitieNewComponent,

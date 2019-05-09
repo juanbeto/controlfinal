@@ -1,0 +1,93 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card pre-scrollable" >
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Calificar Factores</h1>
+        </div>
+        <div class="card-body">
+          
+            <div class="row"  >
+                <div class="col-sm-6"><h2>Nueva Calificacion</h2></div>
+                <div class="col-sm-6 ">
+                  <a href="#" class="btn btn-success" data-toggle="modal" (click)="form_activities = !form_activities; show_activities = !show_activities; form_activities_update=false;"><i class="fa fa-plus-circle"> Nueva Calificacion</i></a>
+                </div>
+              </div>
+
+          <div class="row">
+<!--  primer tabla   ---------------------------->
+        
+
+<div class="col col-md-12 col-lg-12 col-sm-12" *ngIf="show_activities">
+
+
+  
+
+
+
+    <div class="card"  >
+     
+        <div class="card-body">      
+            
+            <div class="form-group">
+                   
+              <div class="table-responsive table-striped table-hover ">
+                <table class="table"  >
+                  <thead>
+                    <tr>
+                      <th scope="col">No</th>
+                      <th scope="col">FACTOR</th>
+                      <th scope="col">CALIFICACION</th>
+                      <th scope="col">OPCIONES</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let risksT of factorModels ; let i = index">
+                      <tr scope="row">
+                       
+                          <th scope="row">{{i +1}}</th>
+                         <td>{{risksT.DESCRIPTION}}</td>
+                         <th scope="row" aria-label="center">{{i +1}}</th>
+                          <td>
+  
+                           <a (click)="openDialogEditFactor(risksT.ID_FACTOR)"  title="Calificar" class="btn btn-outline-warning btn-sm"><i class="fa fa-edit fa-lg">Calificar </i></a>
+                           
+                          
+                        </td>
+                        
+                    </tr>
+                    
+                  </tbody>
+                </table>
+           
+
+                </div>
+                
+              </div>
+
+
+
+         
+            
+                        
+
+              
+        
+          </div>
+        </div>            
+          </div>
+
+
+
+
+</div>
+ <!--  fin   row   -->
+
+
+          </div>
+
+
+          
+          </div>
+          </div>
+          </div>
+          </div>

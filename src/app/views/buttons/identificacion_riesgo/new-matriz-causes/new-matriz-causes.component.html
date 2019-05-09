@@ -1,0 +1,78 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card pre-scrollable">
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Asignar Factores</h1>
+        </div>
+        <div class="card-body">
+            <form #risknew="ngForm" (ngSubmit)="submit(asignationModel)" class="col-md5">
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12col-sm-12">
+         
+   
+             <div class="form-group">
+                     
+                  <br>
+                  <label for="id_casa">Tipos de Riesgos</label>
+                  
+                  <select id="selectdrisks" name="selectrisks" [(ngModel)]="asignationModel.id_proccess" class="form-control" #selectdrisks="ngModel" >
+                    <option value="+47" *ngFor="let risks of proccessModel " [value]="risks.ID_PROCCESS">{{risks.ID_PROCCESS}} {{risks.NAME}}   </option>
+                      </select>
+          
+                        
+                  </div>
+    
+              </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-sm-12 col-md-12col-sm-12">
+   
+
+       <div class="form-group">
+               
+            <br>
+            <label for="id_casa">Tipos de Riesgos</label>
+            
+            <select id="selectdfactor" name="selectdfactor" [(ngModel)]="asignationModel.id_factor" class="form-control" #selectdfactor="ngModel" >
+              <option value="+47" *ngFor="let risks of factorModels " [value]="risks.ID_FACTOR">{{risks.ID_FACTOR}} {{risks.NAME}}   </option>
+                </select>
+    
+                  
+            </div>
+
+        </div>
+  </div>
+
+
+
+
+        
+        
+        
+
+       
+
+
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-sm-12">
+
+                <button type="submit" class="btn btn-outline-success btn-lg btn-block"> <i class="fa fa-plus-circle"> Guardar</i></button>
+            </div>
+           
+          </div>
+
+</form>
+          </div>
+
+
+          
+          </div>
+          </div>
+          </div>
+          </div>

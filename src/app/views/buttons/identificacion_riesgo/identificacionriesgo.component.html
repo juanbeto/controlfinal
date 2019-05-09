@@ -1,130 +1,817 @@
 <div class="animated fadeIn">
+ 
   <div class="row">
     <div class="col-md-4 col-lg-12">
       <div class="card">
         <div class="card-header">
-          <h1 class="panel-title" style="text-align: center">Identificacion del Riesgo</h1>
+          <h1 class="panel-title" style="text-align: center">IDENTIFICACION DE RIESGO</h1>
         </div>
         <div class="card-body">
-          
-          <form  #risks="ngForm" (ngSubmit)="loadTable(riskSelect)" >
-             
-            <div class="form-group">
-               
 
-              <br>
-              <label for="id_casa">Procesos</label>
+          <mat-tab-group>
+            <mat-tab label="Establecer Contexto">
               
-              <select id="selectdrisks" name="selectrisks" [(ngModel)]="riskSelect" class="form-control" #selectdrisks="ngModel" >
-                <option value="+47" *ngFor="let risks of risksmodels " [value]="risks.ID">{{risks.ID}} {{risks.NAME}} </option>
-                  </select>
+                <div class="card">
+                          
+                    <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-sm-12">
+                          <h2><b>Establecer </b>Contexto</h2>
+                     </div>
+                      <div class="col-sm-6 col-md-6 col-sm-12" style="text-align:right">
+                        <a (click)="openDialogInsertFactor()" class="btn btn-outline-success btn-sm"><i class="fa fa-plus-circle"> Nuevo Factor</i></a>
+                      </div>
+                </div>
 
-                 
+              </div>
+                </div>
+                          
 
-               
-          </div>
-        
-        <div class="row">                                                                                   
-          <div class="col-md-4 col-lg-12">
+                <div class="row">
+                  <div class="col-md-12 col-lg-12 col-sm-12">
+                     <div class="card" >
+                      <div class="card-body">
   
-              <button type="submit" class="btn btn-primary btn-lg btn-block">Consultar</button>
-           
-      </div>
-
-      </div> 
-    </form> 
-      </div>
-    </div>
-
-    
-        </div>
-      </div>
-    </div><!--/.col-->
-
-
-
-
-
-    <div class="animated fadeIn">
-      <div class="row">
-        <div class="col-md-4 col-lg-12">
-          <div class="card">
-            <div class="card-header">
-              <h1 class="panel-title" style="text-align: center">Identificacion del Riesgo</h1>
-
-
-             
-              
-
-
-            </div>
-            <div class="card-body">
-              <div class="cargando" *ngIf="!risksmodels">
-                Cargando ...
-              </div>
-              <div class="alert alert-danger" *ngIf="status_risks == 'error'" >
-                {{status_message}}
-              </div>
-              <div  *ngIf="status_risks == 'success'">
-               
-                {{status_message}}
-              
-              </div>
-              <div class="form-group">
-                 
-                <div class="table-responsive table-striped table-hover ">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">CODIGO</th>
-                        <th scope="col">NOMBRE </th>
-                        <th scope="col">DESCRIPCION</th>
-                        <th scope="col">EFECTOS</th>
-                        <th scope="col">CAUSAS</th>
-                        <th scope="col">CLASIFICACION</th>
-                        <th scope="col">OBJETIVO</th>
-                        <th scope="col">FACTORES DE RIESGO</th>
-                        <th scope="col">FACTORES DE VULNERABILIDAD</th>
-                        <th scope="col">PROBABILIDAD</th>
-                        <th scope="col">CREADO POR</th>
-                        <th scope="col">OPCIONES</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let risksT of risksmodels ;" scope="row">
                          
-                            <th scope="row">{{risksT.CODE}}</th>
-                            <td>{{risksT.NAME}}</td>
-                            <td>{{risksT.DESCRIPCION}}</td>
-                            <td>{{risksT.EFFECTS}}s</td>
-                            <td>{{risksT.CAUSES}}</td>
-                            <td>{{risksT.CLASSIFICATION}}</td>
-                            <td>{{risksT.OBJECT}}</td>
-                            <td >{{risksT.FACTOR}}</td>
-                            <td>{{risksT.FACTORVULNERABILITY}}</td>
-                            <td >{{risksT.PROBABILITY}}</td>
-                            <td>{{risksT.CREATEDBY}}</td>
-                            <td>
-    
-                             <a [routerLink]="['../risks/riesgo', risksT.ID]" title="Edit" class="edit btn btn-warning btn-sm"><i class="fa fa-edit"> </i></a>
-                             
-                             <a (click)="delete(risksT.ID)" title="delete" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"> </i></a>
-                          </td>
+                      <h5 class="card-title">Contexto Interno</h5>
+                               
+            
                        
-                      </tr>
-                      
-                    </tbody>
-                  </table>
+                       
+                        <div class="form-group">
+                   
+                            <div class="table-responsive table-striped table-hover ">
+                              <table class="table"  >
+                                <thead>
+                                  <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">NOMBRE </th>
+                                    <th scope="col">DESCRIPCION</th>
+                                    <th scope="col">OPCIONES</th>
+                                  </tr>
+                                </thead>
+                                <tbody *ngFor="let risksT of factorsModel ; let i = index">
+                                    <tr *ngIf="risksT.ID_FACTOR_TYPE == 2" scope="row">
+                                     
+                                        <th scope="row">{{i +1}}</th>
+                                        <td>{{risksT.NAME}}</td>
+                                        <td>{{risksT.DESCRIPTION}}</td>
+                                       
+                                        <td>
+                
+                                         <a (click)="openDialogEditFactor(risksT.ID_FACTOR)"  title="Edit" class="edit btn btn-outline-warning btn-sm"><i class="fa fa-edit fa-lg"> </i></a>
+                                         
+                                         <a (click)="deleteFactor(risksT.ID)" title="Delete" class=" btn btn-outline-danger btn-sm"><i class="fa fa-trash-o fa-lg"> </i></a>
+                                      </td>
+                                      
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                         
+            
+                              </div>
+                              
+                            </div>
+    
+  
+                      </div>
+                    </div>
+                    </div>
                   </div>
+
+
+
+
+ <!-- cierro primera fila ------------------------------------------------------->
+ <div class="row">
+  <div class="col-md-12 col-lg-12 col-sm-12">
+    <div class="card" >
+        <div class="card-body">
+
+          
+                    <h5 class="card-title">Contexto Externo</h5>
+                        
+         
+          <div class="form-group">
+     
+              <div class="table-responsive table-striped table-hover ">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">No</th>
+                      <th scope="col">NOMBRE </th>
+                      <th scope="col">DESCRIPCION</th>
+                      <th scope="col">OPCIONES</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let risksT of factorsModel ; let i = index">
+                      <tr  *ngIf="risksT.ID_FACTOR_TYPE == 1"scope="row">
+                       
+                          <th scope="row">{{ i + 1}}</th>
+                          <td>{{risksT.NAME}}</td>
+                          <td>{{risksT.DESCRIPTION}}</td>
+                         
+                          <td>
+  
+                           <a [routerLink]="['../risks/riesgo/factor_update/', risksT.ID]" title="Edit" class="edit btn btn-outline-warning btn-sm"><i class="fa fa-edit fa-lg"> </i></a>
+                      
+                           <a (click)="delete(risksT.ID)" title="delete" class=" btn btn-outline-danger btn-sm"><i class="fa fa-trash-o fa-lg"> </i></a>
+                        </td>
+                        
+                    </tr>
+                    
+                  </tbody>
+                </table>
+
+               
+
                 </div>
                 
               </div>
-          </div>
+
+
+
+
         </div>
-    
-        
-            </div>
-          </div>
+      </div>
+    </div>
+    </div>
+              
+<!-- cierro segunda fila----------------------------------------------------->
+                   
+
+               <div class="row">
+                  <div class="col-md-12 col-lg-12 col-sm-12">
+                   <div class="card" >
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <h5 class="card-title">Contexto de Proceso</h5>
+                             </div>
+                             
+                        </div>
+          
+                     
+                     
+                      <div class="form-group">
+                 
+                          <div class="table-responsive table-striped table-hover ">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">No</th>
+                                  <th scope="col">NOMBRE </th>
+                                  <th scope="col">DESCRIPCION</th>
+                                  <th scope="col">OPCIONES</th>
+                                </tr>
+                              </thead>
+                              <tbody *ngFor="let risksT of factorsModel ; let i = index">
+                                <tr *ngIf="risksT.ID_FACTOR_TYPE == 3" scope="row">
+                                   
+                                      <th scope="row">{{ i + 1}}</th>
+                                      <td>{{risksT.NAME}}</td>
+                                      <td>{{risksT.DESCRIPTION}}</td>
+                                     
+                                      <td>
+              
+                                       <a [routerLink]="['../risks/riesgo', risksT.ID]" title="Edit" class="edit btn btn-outline-warning btn-sm"><i class="fa fa-edit fa-lg"> </i></a>
+                                       
+                                       <a (click)="delete(risksT.ID)" title="delete" class=" btn btn-outline-danger btn-sm"><i class="fa fa-trash-o fa-lg"> </i></a>
+                                    </td>
+                                    
+                                </tr>
+                                
+                              </tbody>
+                            </table>
+          
+                           
+          
+                            </div>
+                            
+                          </div>
+
+
+
+
+                    </div>
+                  </div>
+                  </div>
+                </div>
+
+
+<!--fin filas------------------------------------>
+
+              
+              
+            
+            </mat-tab>
+            <!-- fin contextos--> 
+
+
+
+            
+<!-- seccion para priorizacion de causas------------------------------------------------------------------------------------------------>            
+            <mat-tab label="Priorizacion de Causas"> 
+
+              <div class="animated fadeIn">
+                <div class="row">
+                  <div class="col-md-4 col-lg-12">
+                    <div class="card">
+                      
+                      <div class="card-body">
+                          <div class="row">
+                               
+
+                   <!--/Inicio de Secciones-->
+                          <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                 <!--/Inicio de la seccion 1-->   
+                              <section>
+
+                                  <div class="row">
+                                      <div class="col-md-8 col-lg-8 col-sm-12">
+                                            <h2><b>Matriz de  </b>Priorizacion de Causas</h2>
+                                      </div>
+
+                                      <div class="col-lg-1 col-md-1 col-sm-4" style="text-align:right">
+                                        <button type="button" (click)="openDialogViewCalification()" class="btn btn-outline-primary btn-md"><i class="fa fa-eye"> </i></button>
+                                       
+                                       
+                                      </div>
+
+                                      <div class="col-lg-1 col-md-1 col-sm-4"  style="text-align:right">
+                                        <button type="button" (click)="openEvaluate()" class="btn btn-outline-success btn-md"><i class="fa fa-check"> </i></button>
+                                       
+                                       
+                                      </div>
+
+                                            <div class="col-lg-1 col-md-1 col-sm-4" style="text-align:right">
+                                            <button type="button" (click)="DialogAsignationFactors()" class="btn btn-outline-warning btn-md"><i class="fa fa-plus-circle"> </i></button>
+                                           
+                                           
+                                          </div>
+                                  </div>
+
+
+
+                                <div class="card"  style="border-color: #5FD1D3;">
+                                    
+                                  <div class="card-body"> 
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                      <h5>  Matriz de priorización de Causas <b> Riesgos de Gestión</b></h5>
+                                    </div>
+
+                                   
+                                    <div class="form-group">
+                 
+                                      <div class="table-responsive table-striped table-hover ">
+                                        <table class="table">
+                                          <thead>
+                                            <tr>
+                                              <th scope="col">No</th>
+                                              <th scope="col">NOMBRE </th>
+                                              <th scope="col">DESCRIPCION</th>
+                                              <th scope="col">PROMEDIO</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody *ngFor="let risksT of asignationModels ;">
+                                            <tr *ngIf="risksT.ID_PROCCESS == 1" scope="row">
+                                             
+                                                  <th scope="row">{{risksT.ID_FACTOR}}</th>
+                                                  <td>{{risksT.NAME}}</td>
+                                                  <td>{{risksT.DESCRIPTION}}</td>
+                                                  <td>{{risksT.NAME}}</td>
+                                               
+                                                 
+                                                  
+                          
+                                                                                                   
+                                            </tr>
+                                            
+                                          </tbody>
+                                        </table>
+                      
+                                       
+                      
+                                        </div>
+                                        
+                                      </div>
+            
+
+
+
+                                      </div>
+
+
+                                  </div>
+                                </div>
+
+
+
+
+
+
+
+                                <div class="card" style="border-color: #3994DC;">
+                                    
+                                    <div class="card-body"> 
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                        <h5>  Matriz de priorización de Causas <b> Riesgos de Corrupción</b></h5>
+                                        </div>
+                                       
+                                      </div>
+                                    
+                                    
+
+                                      <div class="form-group">
+                 
+                                        <div class="table-responsive table-striped table-hover ">
+                                          <table class="table">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">No</th>
+                                                <th scope="col">NOMBRE </th>
+                                                <th scope="col">DESCRIPCION</th>
+                                                <th scope="col">PROMEDIO</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody *ngFor="let risksT of asignationModels ;">
+                                              <tr *ngIf="risksT.ID_PROCCESS == 2" scope="row">
+                                               
+                                                    <th scope="row">{{risksT.ID_FACTOR}}</th>
+                                                    <td>{{risksT.NAME}}</td>
+                                                    <td>{{risksT.DESCRIPTION}}</td>
+                                                    <td>{{risksT.NAME}}</td>
+                                                 
+                                                   
+                                                    
+                            
+                                                                                                     
+                                              </tr>
+                                              
+                                            </tbody>
+                                          </table>
+                        
+                                         
+                        
+                                          </div>
+                                          
+                                        </div>
+
+
+
+                                    </div>
+                                  </div>
+
+
+
+
+
+
+
+
+
+
+                                  <div class="card" style="border-color: #8E69DC;">
+                      
+                                      <div class="card-body"> 
+                                          <div class="row">
+                                              <div class="col-md-12">
+                                          <h5> Matriz de priorización de Causas <b>  Riesgos de Seguridad Digital</b></h5>
+                                          </div>
+                                          
+                                          <div class="form-group">
+                 
+                                            <div class="table-responsive table-striped table-hover ">
+                                              <table class="table">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">NOMBRE </th>
+                                                    <th scope="col">DESCRIPCION</th>
+                                                    <th scope="col">PROMEDIO</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody *ngFor="let risksT of asignationModels ;">
+                                                  <tr *ngIf="risksT.ID_PROCCESS == 3" scope="row">
+                                                   
+                                                        <th scope="row">{{risksT.ID_FACTOR}}</th>
+                                                        <td>{{risksT.NAME}}</td>
+                                                        <td>{{risksT.DESCRIPTION}}</td>
+                                                        <td>{{risksT.NAME}}</td>
+                                                     
+                                                       
+                                                        
+                                
+                                                                                                         
+                                                  </tr>
+                                                  
+                                                </tbody>
+                                              </table>
+                            
+                                             
+                            
+                                              </div>
+                                              
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    
+                              </section>
+                               <!--/Fin de la seccion 1-->
+                              </div>
+                             
+                             
+                             
+                             
+                              <div class="col-lg-6 col-md-6 col-sm-12" >
+
+
+
+
+                                 <!--/Inicio de la seccion 2-->   
+
+
+ <!-- ----------------------/   Matriz de  Causas Priorizadas ------------------------------------------------------------------------------------------- -->  
+                                <section>
+                                
+                                    <div class="col" >
+                                        <h2><b>Matriz de  </b>Causas Priorizadas</h2>  
+                                       </div>
+
+                              <br> <br>
+
+                                    <div class="card" style="border-color: #C70039;">
+                                      
+                      
+                                        <div class="card-body"> 
+                                            
+                                                                                 
+                                          <div class="col col-md-12 col-lg-12 col-sm-12">
+
+
+                                          <div class="card"  *ngFor="let risksT of factorsModel ;">
+                                           
+                                              <div class="card-body">
+                                                  <div class="card-title"> <b>{{risksT.NAME | uppercase}}</b> </div>
+                                             
+                                                                                         
+                                                </div>
+                                              </div>            
+                                                </div>
+                                       
+                                       
+                                          </div>
+                                      </div>
+
+
+                              </section>
+                               <!--/Fin de la seccion 2-->
+                              </div>
+                        </div>
+                    <!--/Fin de las secciones-->
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    </div><!--/.col-->
+            </mat-tab>
+            
+           <!-- fin priorizacion de causas--> 
+
+
+
+<!-- seccion para descripcion de Riesgos----------------------------------------------------------------------------------------------->
+            
+            <mat-tab label="Descripcion de los Riesgos"> 
+
+
+                <div class="animated fadeIn">
+                    <div class="row">
+                      <div class="col-md-4 col-lg-12">
+                        <div class="card">
+                          
+                          <div class="card-body">
+                             
+<!-- Formato de descripción del riesgo de gestión------------------------------> 
+<br>
+<div class="container">
+ 
+    <div class="card" style="border-color: rgb(211, 209, 95); " >
+                           
+      <div class="card-body"> 
+          <div class="row" >
+    <div class="col-lg-8 col-md-5 col-sm-12">
+          <h2>Administracion de <b> Riesgo  </b></h2>
+     </div>
+      <div class="col-lg-4 col-md-7 col-sm-12" >
+        <button style="text-align: right" type="button" (click)="openDialogNewRisk()" class="btn btn-outline-success btn-sm"><i class="fa fa-plus-circle"> Riesgo </i></button>
+        &nbsp; <button style="text-align: right"  type="button" (click)="openDialogNewCauses()" class="btn btn-outline-success btn-sm"><i class="fa fa-plus-circle"> Causa </i></button>
+       &nbsp; <button style="text-align: right"  type="button" (click)="openDialogNewConsecuences()" class="btn btn-outline-success btn-sm"><i class="fa fa-plus-circle">Consecuencia </i></button>
+          
+      </div>
       
+      
+      </div>
+      </div>
+    </div>
+                              
+                                  <br>
+                                <div class="row">
+                                <div class="col-lg-10 col-md-8 col-sm-12">
+                                      <h2>Formato de descripción del<b> riesgo de gestión </b></h2>
+                                 </div>
+                                 
+                                </div>
+
+
+                               
+
+
+
+
+                               
+                                <div class="row">
+
+<br>
+                                    <div class="form-group">
+                 
+                                        <div class="table-responsive table-striped table-hover ">
+                                          <table class="table">
+                                            <thead>
+                                              <tr >
+                                                  <th scope="col">NO</th>
+                                                <th scope="col">CODIGO</th>
+                                                <th scope="col">RIESGO </th>
+                                                <th scope="col">DESCRIPCION</th>
+                                                <th scope="col">TIPO</th>
+
+
+                                                <th scope="col" >CAUSAS
+                                                  
+                                                </th>
+
+                                                <th scope="col" >CONSECUENCIA
+                                                  
+                                                </th>
+
+
+
+                                                <th scope="col">OPCIONES</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody *ngFor="let risksT of risksmodels ;">
+                                              <tr *ngIf="risksT.ID_PROCCESS == 1" scope="row" >
+                                                  <th scope="row" style="text-align: center;">{{risksT.ID }}</th>
+                                                    <th scope="row" style="text-align: center;">{{risksT.CODE }}</th>
+                                                    <td ><b>{{risksT.NAME | uppercase  }}</b></td>
+                                                    <td>{{risksT.DESCRIPTION}}</td>
+                                                    <td>{{risksT.TYPE}}</td>
+                                                    <td >
+                                                      <ol *ngFor="let causes of causesModels;">
+                                                      <li *ngIf="risksT.ID == causes.ID_RISKS"> {{causes.NAME}}</li>
+                                                    </ol>
+                                                     
+                                                    </td>
+                                                    <td>
+                                                      <ol *ngFor="let effects of effectsModels;">
+                                                        <li *ngIf="risksT.ID==effects.ID_RISKS">
+                                                            {{effects.NAME}}
+                                                        </li>
+                                                      </ol>
+                                                     
+                                                    
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" (click)="openDialogViewCalification()" class="btn btn-outline-warning btn-sm"><i class="fa fa-edit"> </i></button>&nbsp;
+                                                        <button type="button" (click)="openDialogViewCalification()" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"> </i></button>
+                                       
+
+                                                    </td>
+                                                 
+                                                    
+                                                    
+                            
+                                                                                                     
+                                              </tr>
+                                              
+                                            </tbody>
+                                          </table>
+                        
+                                         
+                        
+                                          </div>
+                                          
+                                        </div>
+
+
+
+                                </div>
+                            
+
+                     
+
+ <!-- Formato de descripción del riesgo de Corrupcion------------------------------> 
+ <br>
+                            <div class="row">
+                              <div class="col-lg-12 col-md-12 col-sm-12">
+                                <h2>Formato de descripción del<b> riesgo de Corrupciòn </b></h2>
+                               </div>
+                               
+                          </div>
+                          <br>
+
+ <div class="row">
+       
+    <div class="form-group">
+                 
+        <div class="table-responsive table-striped table-hover ">
+          <table class="table">
+            <thead>
+              <tr >
+                  <th scope="col">NO</th>
+                <th scope="col">CODIGO</th>
+                <th scope="col">RIESGO </th>
+                <th scope="col">DESCRIPCION</th>
+                <th scope="col">TIPO</th>
+                <th scope="col" style="text-align: center;">CAUSAS</th>
+                <th scope="col" style="text-align: center;">CONSECUENCIAS</th>
+                <th scope="col">OPCIONES</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let risksT of risksmodels ;">
+              <tr *ngIf="risksT.ID_PROCCESS == 2" scope="row" >
+                  <th scope="row" style="text-align: center;">{{risksT.ID }}</th>
+                    <th scope="row" style="text-align: center;">{{risksT.CODE }}</th>
+                    <td ><b>{{risksT.NAME | uppercase  }}</b></td>
+                    <td>{{risksT.DESCRIPTION}}</td>
+                    <td>{{risksT.TYPE}}</td>
+                    <td >
+                      <ol *ngFor="let causes of causesModels;">
+                      <li *ngIf="risksT.ID == causes.ID_RISKS"> {{causes.NAME}}</li>
+                    </ol>
+                     
+                    </td>
+                    <td>
+                      <ol *ngFor="let effects of effectsModels;">
+                        <li *ngIf="risksT.ID==effects.ID_RISKS">
+                            {{effects.NAME}}
+                        </li>
+                      </ol>
+                     
+                    
+                    </td>
+                    <td>
+                        <button type="button" (click)="openDialogViewCalification()" class="btn btn-outline-warning btn-sm"><i class="fa fa-edit"> </i></button>&nbsp;
+                        <button type="button" (click)="openDialogViewCalification()" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"> </i></button>
+       
+
+                    </td>
+                 
+                    
+                    
+
+                                                                     
+              </tr>
+              
+            </tbody>
+          </table>
+
+         
+
+          </div>
+          
+        </div>
+
+
+ </div>
+
+
+  <!-- Formato de descripción del Riesgo de seguridad Digital------------------------------> 
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <h2>Formato de descripción del <b>Riesgo de seguridad Digital </b></h2>
+     </div>
+      
+</div>   
+<br>
+
+<div class="row">
+       
+    <div class="form-group">
+                 
+        <div class="table-responsive table-striped table-hover ">
+          <table class="table">
+            <thead>
+              <tr >
+                  <th scope="col">NO</th>
+                <th scope="col">CODIGO</th>
+                <th scope="col">ACTIVO</th>
+                <th scope="col">RIESGO </th>
+                <th scope="col">DESCRIPCION</th>
+                <th scope="col">AMENAZA</th>
+                <th scope="col">TIPO</th>
+                <th scope="col" style="text-align: center;">CAUSAS</th>
+                <th scope="col" style="text-align: center;">CONSECUENCIAS</th>
+                <th scope="col">OPCIONES</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let risksT of risksmodels ;">
+              <tr *ngIf="risksT.ID_PROCCESS == 3" scope="row" >
+                  <th scope="row" style="text-align: center;">{{risksT.ID }}</th>
+                    <th scope="row" style="text-align: center;">{{risksT.CODE }}</th>
+                    <td ><b>{{risksT.ACTIVO  }}</b></td>
+                    <td ><b>{{risksT.NAME | uppercase  }}</b></td>
+                    <td>{{risksT.DESCRIPTION}}</td>
+                    <td>{{risksT.AMENAZA}}</td>
+                    <td>{{risksT.TYPE}}</td>
+                    <td >
+                      <ol *ngFor="let causes of causesModels;">
+                      <li *ngIf="risksT.ID == causes.ID_RISKS"> {{causes.NAME}}</li>
+                    </ol>
+                     
+                    </td>
+                    <td>
+                      <ol *ngFor="let effects of effectsModels;">
+                        <li *ngIf="risksT.ID==effects.ID_RISKS">
+                            {{effects.NAME}}
+                        </li>
+                      </ol>
+                     
+                    
+                    </td>
+                    <td>
+                        <button type="button" (click)="openDialogViewCalification()" class="btn btn-outline-warning btn-sm"><i class="fa fa-edit"> </i></button>&nbsp;
+                        <button type="button" (click)="openDialogViewCalification()" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash-o"> </i></button>
+       
+
+                    </td>
+                 
+                    
+                    
+
+                                                                     
+              </tr>
+              
+            </tbody>
+          </table>
+
+         
+
+          </div>
+          
+        </div>
+
+
+ </div>
+
+
+
+
+
+                            
+
+
+                        </div>
+                      </div>
+                  
+                      
+                          </div>
+                        </div>
+                      </div><!--/.col-->
+                  
+                  
+                  
+                  
+                  
+                   
+                            </div>
+                        
+
+
+
+            </mat-tab>
+
+ <!-- fin priorizacion de causas--> 
+
+
+          </mat-tab-group>
+
+</div>
+</div>
+
+</div>
+</div>
+</div><!--/.col-->
+
+
+
+
    
          

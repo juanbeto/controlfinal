@@ -1,6 +1,6 @@
 export class risksprocess{
 	constructor(
-    public id: number,
+    public id_proccess: number,
     public name: string,
     public objective: string,
     public createdate: any,

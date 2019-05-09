@@ -52,7 +52,7 @@ export class AuditAppliedRunComponent implements OnInit {
 
     this.label_name_process = 'Nombre del proceso';
 
-    this._audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+    this._audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
     this.getFormat();
     this.getAudit();
    }

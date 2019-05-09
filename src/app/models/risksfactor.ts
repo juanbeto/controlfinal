@@ -1,9 +1,9 @@
 export class risksfactor{
 	constructor(
-    public id: number,
-    public name: string,
-    public id_factor_type: number,
-    public description: string,
-    public definition: string
+    public ID_FACTOR: number,
+    public NAME: string,
+    public ID_FACTOR_TYPE: number,
+    public DESCRIPTION: string,
+    public DEFINITION: string
   ){}
 }

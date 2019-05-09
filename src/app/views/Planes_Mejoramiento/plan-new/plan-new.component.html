@@ -1,0 +1,61 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-4 col-lg-12">
+        <div class="card pre-scrollable">
+          <div class="card-header">
+            <h1 class="panel-title" style="text-align: center">Nuevo Plan de Mejoramiento</h1>
+          </div>
+          <div class="card-body">
+              <form #plannew="ngForm" (ngSubmit)="submit(newPlann)" class="col-md5">
+  
+ 
+                      <div class="form-group">
+                              
+                         
+           <label for="nombre_proceso">Nombre del Proceso</label>
+             <input type="text" name="nombre_proceso" [(ngModel)]="newPlann.nombre_proceso" class="form-control" #nombre_proceso="ngModel"  required/>
+              <span *ngIf="!nombre_proceso.valid && nombre_proceso.touched"> Nombre Invalido</span>
+                           
+                                      
+                                    
+                            
+           <label for="responsable">Responsable</label>
+             <input type="text" name="responsable" [(ngModel)]="newPlann.responsable" class="form-control" #responsable="ngModel"  required/>
+            <span *ngIf="!responsable.valid && responsable.touched"> Nombre Invalido</span>
+                                 
+                                         
+                          
+          <label for="id_casa">Fuente</label>
+                    
+          <select id="selectdrisks" name="selectrisks"  class="form-control"  >
+              <option value="+47" *ngFor="let risks of proccessModel " [value]="risks.ID_PROCCESS">{{risks.ID_PROCCESS}} {{risks.NAME}}   </option>
+          </select>           
+                          
+                    </div>  
+                         
+       <label for="hallazgo">Fecha Hallazgo</label>
+       <input type="text" name="hallazgo" [(ngModel)]="newPlann.fecha_hallazgo" class="form-control" #hallazgo="ngModel"  required/>
+         <span *ngIf="!hallazgo.valid && hallazgo.touched"> Nombre Invalido</span>     
+     
+
+
+       <label for="suscripcion">Fecha Suscripciòn</label>
+       <input type="text" name="suscripcion" [(ngModel)]="newPlann.fecha_suscripcion" class="form-control" #suscripcion="ngModel"  required/>
+        <span *ngIf="!suscripcion.valid && suscripcion.touched"> Nombre Invalido</span>
+  
+          
+          
+        
+  
+                  <button type="submit" class="btn btn-outline-primary btn-lg btn-block"> <i class="fa fa-plus-circle"> Guardar</i></button>
+          
+  
+  </form>
+            </div>
+  
+  
+            
+            </div>
+            </div>
+            </div>
+            </div>

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import {FormControl} from '@angular/forms';
 import { audit } from '../../../../models/index_audit';
+import { user } from '../../../../models/adminuser';
 import { AuditService } from '../../../../services/audits/audit.service';
 import { PlanningService } from '../../../../services/audits/planning.service';
 import { ActivitiesService } from '../../../../services/audits/activities.service';
+import { UserService } from '../../../../services/admin/user.service';
 
 @Component({
   selector: 'app-audit-new',
@@ -33,13 +36,14 @@ export class AuditNewComponent implements OnInit {
 
   public status: string;
   public status_message: string;
-  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,'nul1l',Date.now(),null,null,null);
-
+  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,'nul1l',Date.now(),null,null,null, null);
+  public list_user = new Array<user>();
   //@Input() public programa: program;
 
   constructor(    private _route: ActivatedRoute,
       private _router: Router,
-      private _auditService: AuditService,) {
+      private _auditService: AuditService,
+      private _userService: UserService) {
         this.label_title = 'Lista de Auditorias';
         this.label_id = '#';
         this.label_name = 'Nombre';
@@ -61,10 +65,23 @@ export class AuditNewComponent implements OnInit {
       }
 
   ngOnInit() {
+    this.getListUsers();
+    for(var i=0;i<5;i++){
+      this.list_user[i] = new user(1,'pedro', null, null);
+    }
   }
 
 
-
+  getListUsers(){
+    this._userService.getUsers().subscribe(
+      response  => {
+        this.list_user = response.users;
+      },
+      error     => {
+        console.log(<any>error);
+      }
+    );
+  }
 
   onSubmit(_audit: audit){
     this._route.params.subscribe(
@@ -76,7 +93,7 @@ export class AuditNewComponent implements OnInit {
         _audit.MECI = '';
         _audit.NUMERALS = '';
         _audit.CLOSED = '0';
-        this._auditService.create(_audit).subscribe(
+        this._auditService.create(_audit, this.list_user).subscribe(
           response => {
             console.log(response);
             this._audit = response.audit;

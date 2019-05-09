@@ -24,7 +24,7 @@ export class UserService {
     return this._http.post<any>(this.url, params, {headers: headers});
   }
 
-  getFormats(): Observable<any>{
+  getUsers(): Observable<any>{
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.get<any>(this.url, {headers: headers});
   }

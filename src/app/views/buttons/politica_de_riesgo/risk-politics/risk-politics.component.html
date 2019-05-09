@@ -1,0 +1,126 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-4 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="panel-title" style="text-align: center">Politicas de Riesgo</h1>
+        </div>
+        <div class="card-body">
+
+<div class="row" >
+  <div class="col-sm-6 col-md-6 col-sm-12">
+
+      <b>ADMINISTRAR ARCHIVOS</b>
+  </div>
+  <div class="col-sm-6 col-md-6 col-sm-12" >
+    <b>SUBIR DOCUMENTO</b>
+       </div>
+</div>
+
+
+<div class="row" >
+    <div class="col-sm-6 col-md-6 col-sm-12">
+<div>
+
+</div>
+
+<div class="card" style="border-color: #5FD1D3;">
+
+  <div class="card body">
+    <form method="POST" action="login">
+              
+          
+                                
+      <div class="form-group">
+             
+            <div class="table-responsive ">
+              <table class="table">
+                <thead>
+                                             
+                   <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nombre Documento </th>
+                    <th scope="col">Opciones</th>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr scope="row">
+                    <th scope="row">DESPA</th>
+                    <td> nombre</td>
+                    <td>
+
+   
+                        <a [routerLink]="['../audits/audit', audit.ID]" title="Descargar" class="edit btn btn-primary btn-sm"><i class="fa fa-download"> </i></a>
+                        <a [routerLink]="['../audits/audits-update', audit.ID]" title="Editar" class="edit btn btn-warning btn-sm"><i class="fa fa-edit"> </i></a>
+                        <a (click)="delete(audit.ID)" title="Borrar" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"> </i></a>
+                      </td>
+                      
+                    
+                                                                        
+                  </tr>
+                </tbody>
+              </table>
+             </div>
+          </div>
+     
+    
+
+    
+      </form>
+  </div>
+</div>
+    
+                </div>
+
+<!--/segunda seccion................................................................................-->
+
+                <div class="col-sm-6 col-md-6 col-sm-12">
+<div class="card">
+  <div class="card body">
+
+    <form class="form-horizontal" (ngSubmit)="create(createForm.value)" #createForm="ngForm">
+      <fieldset>
+       
+        <div class="form-group">
+          <label for="thumbnail" class="col-lg-12 control-label">Nombre</label>
+        
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="thumbnail" name="thumbnail">
+        </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="thumbnail" class="col-lg-12 control-label">Nombre</label>
+          
+          <div class="col-lg-10">
+            <input type="file" accept="pdf/*" class="form-control" id="pdf" name="pdf">
+          </div>
+          </div>
+
+
+
+      </fieldset>
+
+      <button class="btn btn-success btn-block" type="" ><i class="fa fa-upload"></i></button>
+    </form>
+
+    
+
+   
+  </div>
+</div>
+                 
+              </div>
+<!--/fin de la segunda seccion.......................................................................-->
+</div>
+</div>
+
+
+ 
+          
+          </div>
+        </div><!--/.col-->
+
+
