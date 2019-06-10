@@ -93,7 +93,7 @@ export class AuditDetailComponent implements OnInit {
           response => {
             if(response.status == 'success'){
               this._audit = response.audit;
-              console.log(this._audit);
+              console.log(this._audit.GLOBAL);
               this.getActivities();
               this.getPlannings();
             }else if(response.status == 'error'){

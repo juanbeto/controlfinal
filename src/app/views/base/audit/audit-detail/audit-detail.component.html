@@ -56,8 +56,10 @@
   </div>
 </div>
 <!-- AUDITORIAS -->
-
-<app-activitie-list [activities]="activities"></app-activitie-list>
-
-
-<app-planning-list [plannings]="plannings"></app-planning-list>
+<div *ngIf="_audit.GLOBAL==0">
+  <app-activitie-list [activities]="activities"></app-activitie-list>
+  <app-planning-list [plannings]="plannings"></app-planning-list>
+</div>
+<div *ngIf="_audit.GLOBAL==1">
+  NUevas auditorias... lista de auditorias
+</div>

@@ -17,6 +17,15 @@
     </tr>
     <tr>
       <td>
+        <strong>{{label_global}}</strong>
+      </td>
+      <td>
+        <input type="checkbox" name="global" [(ngModel)]="_audit.GOBAL" class="form-control" #date_begin="ngModel" value="{{_audit.GOBAL}}"> 
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         <strong>{{label_end}}</strong>
       </td>
       <td>
@@ -81,13 +90,6 @@
             {{user.name}}
           </option>
         </select>
-
-        <mat-form-field>
-  <mat-label>Toppings</mat-label>
-  <mat-select [formControl]="toppings" multiple>
-    <mat-option *ngFor="let user of list_user" [value]="user.id">{{user.name}}</mat-option>
-  </mat-select>
-</mat-form-field>
       </td>
     </tr>
     <tr>

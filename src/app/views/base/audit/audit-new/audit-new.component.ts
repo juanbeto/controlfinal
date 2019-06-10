@@ -97,7 +97,7 @@ export class AuditNewComponent implements OnInit {
           response => {
             console.log(response);
             this._audit = response.audit;
-            console.log(this._audit);
+            console.log(this._audit.GLOBAL);
             this._router.navigate(['base/audits/audit/'+this._audit.ID]);
           },
           error => {
