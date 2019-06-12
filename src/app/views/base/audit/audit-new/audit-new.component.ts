@@ -36,7 +36,7 @@ export class AuditNewComponent implements OnInit {
 
   public status: string;
   public status_message: string;
-  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,'nul1l',Date.now(),null,null,null, null);
+  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,'nul1l',Date.now(),null,null,null, null);
   public list_user = new Array<user>();
   //@Input() public programa: program;
 

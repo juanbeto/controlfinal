@@ -3,8 +3,8 @@
 
 <!-- ENCABEZADO -->
 <app-format-detail [format]="format"></app-format-detail>
-<br/>
-<br/>
+<br />
+<br />
 
 <!-- INFORMACION PROGRAMA -->
 <div class="container   rounded text-justify formato text-white">
@@ -61,5 +61,20 @@
   <app-planning-list [plannings]="plannings"></app-planning-list>
 </div>
 <div *ngIf="_audit.GLOBAL==1">
-  NUevas auditorias... lista de auditorias
+  <app-audit-list [_audit]="audits"></app-audit-list>
+
+  <div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-4 col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="container formato float-right">
+              <h1 class="panel-" style="text-align: center"><a [routerLink]="['/base/audits', program.ID, 'audit-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Auditor&iacute;a</i></a></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/.col-->
 </div>

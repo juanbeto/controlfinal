@@ -34,7 +34,8 @@ export class AuditDetailComponent implements OnInit {
 
   public status: string;
   public status_message: string;
-  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+  public audits: audit;
   public activities: auditactivities;
   public plannings: auditplanning;
 
@@ -94,8 +95,12 @@ export class AuditDetailComponent implements OnInit {
             if(response.status == 'success'){
               this._audit = response.audit;
               console.log(this._audit.GLOBAL);
-              this.getActivities();
-              this.getPlannings();
+              if(this._audit.GLOBAL == '1'){
+                this.getActivities();
+                this.getPlannings();
+              }else{
+                this.getAuditsMini();
+              }
             }else if(response.status == 'error'){
               this._router.navigate(['/base/audits/program']);
             }else{
@@ -128,6 +133,21 @@ export class AuditDetailComponent implements OnInit {
       response =>{
         if(response.status == 'success'){
           this.plannings = response.plannings;
+        }
+      },
+      error=>{
+          console.log(error);
+      }
+    );
+  }
+
+
+  getAuditsMini(){
+    this._auditService.getAuditsByAudits(this._audit.PARENT_ID_AUDIT).subscribe(
+      response =>{
+
+        if(response.status == 'success'){
+          this.audits = response.audits;
         }
       },
       error=>{

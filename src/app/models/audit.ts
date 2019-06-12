@@ -2,6 +2,7 @@ export class audit{
 	constructor(
     public ID: number,
     public ID_PROGRAM: number,
+		public PARENT_ID_AUDIT: number,
     public NAME: string,
     public OBJECTIVE: string,
     public ID_USER_MANAGER: number,

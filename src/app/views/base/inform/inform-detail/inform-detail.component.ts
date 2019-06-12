@@ -62,7 +62,7 @@ export class InformDetailComponent implements OnInit {
         this.label_nc = "No conformidad";
 
         this.inform = new auditinform(null,null,'','','','','','','','','0',null,null,null,null);
-        this._audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+        this._audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
       }
 
   ngOnInit() {
