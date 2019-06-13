@@ -38,7 +38,7 @@ export class AuditListRunComponent implements OnInit {
   }
 
   getAudits(){
-    this._auditService.getAudits().subscribe(
+    this._auditService.getAuditsListRun().subscribe(
       response =>{
 
         if(response.status == 'success'){

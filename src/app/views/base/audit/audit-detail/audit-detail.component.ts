@@ -94,8 +94,8 @@ export class AuditDetailComponent implements OnInit {
           response => {
             if(response.status == 'success'){
               this._audit = response.audit;
-              console.log(this._audit.GLOBAL);
-              if(this._audit.GLOBAL == '1'){
+              console.log(this._audit.GLOBAL != '1');
+              if(this._audit.GLOBAL != '1'){
                 this.getActivities();
                 this.getPlannings();
               }else{
@@ -143,7 +143,8 @@ export class AuditDetailComponent implements OnInit {
 
 
   getAuditsMini(){
-    this._auditService.getAuditsByAudits(this._audit.PARENT_ID_AUDIT).subscribe(
+    console.log(this._audit);
+    this._auditService.getAuditsByAudits(this._audit.ID).subscribe(
       response =>{
 
         if(response.status == 'success'){

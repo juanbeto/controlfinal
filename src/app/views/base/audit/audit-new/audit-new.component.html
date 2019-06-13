@@ -15,12 +15,12 @@
         <span>{{ _audit.CREATED_AT | date }} </ span>
       </td>
     </tr>
-    <tr>
+    <tr *ngIf="audit_min==0">
       <td>
         <strong>{{label_global}}</strong>
       </td>
       <td>
-        <input type="checkbox" name="global" [(ngModel)]="_audit.GOBAL" class="form-control" #date_begin="ngModel" value="{{_audit.GOBAL}}"> 
+        <input type="checkbox" name="global" [(ngModel)]="_audit.GOBAL" class="form-control" #date_begin="ngModel" value="{{_audit.GOBAL}}">
       </td>
     </tr>
 

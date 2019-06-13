@@ -24,6 +24,7 @@ import { AuditUpdateComponent } from './audit/audit-update/audit-update.componen
 import { InformListComponent } from './inform/inform-list/inform-list.component';
 import { InformEditComponent } from './inform/inform-edit/inform-edit.component';
 import { InformDetailComponent } from './inform/inform-detail/inform-detail.component';
+import { AuditminNewComponent } from './audit/auditmin-new/auditmin-new.component';
 
 
 
@@ -64,6 +65,7 @@ const routes: Routes = [
 
   {path:'audits/audit', component: AuditListComponent },
   {path:'audits/:idprogram/audit-new', component: AuditNewComponent },
+  {path:'audits/:idauditparent/audit-mini-new', component: AuditminNewComponent },
   {path:'audits/audit/:id', component: AuditDetailComponent },
   {path:'audits/audit-update/:id', component: AuditUpdateComponent },
 

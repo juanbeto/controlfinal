@@ -43,6 +43,16 @@ export class AuditService {
     return this._http.post<any>(this.url+"/search", params, {headers: headers});
   }
 
+
+
+  getAuditsListRun(): Observable<any>{
+    let params = 'json={"closed":"0","global":"0"}';
+    console.log(this.token);
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+                                    .set('Authorization', this.token);
+    return this._http.post<any>(this.url+"/search", params, {headers: headers});
+  }
+
   getAuditsByProgram(id_program): Observable<any>{
     let params = 'json={"id_program":"'+id_program+'"}';
     console.log(this.token);

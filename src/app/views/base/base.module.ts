@@ -113,6 +113,7 @@ import { PlanningUpdateComponent } from './planning/planning-update/planning-upd
 import { InformListComponent } from './inform/inform-list/inform-list.component';
 import { InformEditComponent } from './inform/inform-edit/inform-edit.component';
 import { InformDetailComponent } from './inform/inform-detail/inform-detail.component';
+import { AuditminNewComponent } from './audit/auditmin-new/auditmin-new.component';
 
 
 
@@ -174,7 +175,8 @@ import { InformDetailComponent } from './inform/inform-detail/inform-detail.comp
     ActivitieUpdateComponent,
     InformListComponent,
     InformEditComponent,
-    InformDetailComponent
+    InformDetailComponent,
+    AuditminNewComponent
   ],
   entryComponents: [ AreasDetailComponent ],
 })

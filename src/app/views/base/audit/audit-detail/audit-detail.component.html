@@ -56,7 +56,7 @@
   </div>
 </div>
 <!-- AUDITORIAS -->
-<div *ngIf="_audit.GLOBAL==0">
+<div *ngIf="_audit.GLOBAL!=1">
   <app-activitie-list [activities]="activities"></app-activitie-list>
   <app-planning-list [plannings]="plannings"></app-planning-list>
 </div>
@@ -69,7 +69,7 @@
         <div class="card">
           <div class="card-body">
             <div class="container formato float-right">
-              <h1 class="panel-" style="text-align: center"><a [routerLink]="['/base/audits', program.ID, 'audit-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Auditor&iacute;a</i></a></h1>
+              <h1 class="panel-" style="text-align: center"><a [routerLink]="['/base/audits', _audit.ID , 'audit-mini-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Auditor&iacute;a</i></a></h1>
             </div>
           </div>
         </div>

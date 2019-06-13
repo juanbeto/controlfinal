@@ -33,7 +33,7 @@ export class AuditNewComponent implements OnInit {
   public label_numerals: string;
   public label_meci: string;
   public actions: string;
-
+  public audit_min: number;
   public status: string;
   public status_message: string;
   public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,'nul1l',Date.now(),null,null,null, null);
@@ -62,6 +62,7 @@ export class AuditNewComponent implements OnInit {
         this.label_numerals = 'Numerales';
         this.label_meci = 'MECI';
         this.actions = 'Acciones';
+        this.audit_min = 0;
       }
 
   ngOnInit() {
@@ -89,7 +90,8 @@ export class AuditNewComponent implements OnInit {
         let id = +params['idprogram'];
         _audit.ID_PROGRAM =id;
         _audit.APPROVED = '1';
-        _audit.GLOBAL = '1';
+        if(_audit.GLOBAL==null)
+          _audit.GLOBAL='0';
         _audit.MECI = '';
         _audit.NUMERALS = '';
         _audit.CLOSED = '0';
