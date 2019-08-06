@@ -36,8 +36,9 @@ export class AuditNewComponent implements OnInit {
   public audit_min: number;
   public status: string;
   public status_message: string;
-  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,'nul1l',Date.now(),null,null,null, null);
+  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,'0',null,null,null,Date.now(),null,null,null, null);
   public list_user = new Array<user>();
+  public global1: boolean;
   //@Input() public programa: program;
 
   constructor(    private _route: ActivatedRoute,
@@ -63,6 +64,7 @@ export class AuditNewComponent implements OnInit {
         this.label_meci = 'MECI';
         this.actions = 'Acciones';
         this.audit_min = 0;
+        this.global1 = false;
       }
 
   ngOnInit() {
@@ -84,14 +86,22 @@ export class AuditNewComponent implements OnInit {
     );
   }
 
+checkValue(a:any){
+
+      if(this.global1!=false){
+          this._audit.GLOBAL='1';
+      }else{
+        this._audit.GLOBAL='0';
+      }
+}
+
   onSubmit(_audit: audit){
+    console.log(_audit);
     this._route.params.subscribe(
       params => {
         let id = +params['idprogram'];
         _audit.ID_PROGRAM =id;
         _audit.APPROVED = '1';
-        if(_audit.GLOBAL==null)
-          _audit.GLOBAL='0';
         _audit.MECI = '';
         _audit.NUMERALS = '';
         _audit.CLOSED = '0';
@@ -99,7 +109,6 @@ export class AuditNewComponent implements OnInit {
           response => {
             console.log(response);
             this._audit = response.audit;
-            console.log(this._audit.GLOBAL);
             this._router.navigate(['base/audits/audit/'+this._audit.ID]);
           },
           error => {

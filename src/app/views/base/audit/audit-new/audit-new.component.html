@@ -20,7 +20,7 @@
         <strong>{{label_global}}</strong>
       </td>
       <td>
-        <input type="checkbox" name="global" [(ngModel)]="_audit.GOBAL" class="form-control" #date_begin="ngModel" value="{{_audit.GOBAL}}">
+        <input type="checkbox"  name="global1" [(ngModel)]="global1" ng-true-value="1" ng-false-value="0"  class="form-control"  (change)="checkValue($event)">
       </td>
     </tr>
 
